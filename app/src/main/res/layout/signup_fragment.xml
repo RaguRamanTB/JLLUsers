@@ -3,6 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
+    android:background="@color/background_color"
     android:padding="20dp" >
 
     <TextView
@@ -28,14 +29,14 @@
         android:inputType="textCapWords"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="16sp" />
 
     <View
         android:layout_width="fill_parent"
         android:layout_height="1px"
-        android:background="@color/black" />
+        android:background="@color/white_greyish" />
 
     <EditText
         android:id="@+id/userEmailId"
@@ -50,14 +51,14 @@
         android:inputType="textEmailAddress"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="16sp" />
 
     <View
         android:layout_width="fill_parent"
         android:layout_height="1px"
-        android:textColor="@color/black"/>
+        android:background="@color/white_greyish" />
 
     <EditText
         android:id="@+id/mobileNumber"
@@ -72,14 +73,14 @@
         android:inputType="phone"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="16sp" />
 
     <View
         android:layout_width="fill_parent"
         android:layout_height="1px"
-        android:textColor="@color/black" />
+        android:background="@color/white_greyish" />
 
     <EditText
         android:id="@+id/location"
@@ -94,14 +95,14 @@
         android:inputType="textCapWords"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="16sp" />
 
     <View
         android:layout_width="fill_parent"
         android:layout_height="1px"
-        android:textColor="@color/black" />
+        android:background="@color/white_greyish" />
 
     <EditText
         android:id="@+id/password"
@@ -116,14 +117,14 @@
         android:inputType="textPassword"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="16sp" />
 
     <View
         android:layout_width="fill_parent"
         android:layout_height="1px"
-        android:textColor="@color/black" />
+        android:background="@color/white_greyish" />
 
     <EditText
         android:id="@+id/confirmPassword"
@@ -138,8 +139,8 @@
         android:inputType="textPassword"
         android:padding="10dp"
         android:singleLine="true"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="16sp" />
 
     <CheckBox
@@ -148,8 +149,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
         android:text="@string/terms_conditions"
-        android:textColor="@color/black"
-        android:textSize="11sp" />
+        android:textColor="@color/white"
+        android:textSize="12sp" />
 
     <Button
         android:id="@+id/signUpBtn"
@@ -172,7 +173,7 @@
         android:gravity="center"
         android:padding="10dp"
         android:text="@string/already_user"
-        android:textColor="@color/black"
+        android:textColor="@color/white_greyish"
         android:textSize="15sp" />
 
 </LinearLayout>

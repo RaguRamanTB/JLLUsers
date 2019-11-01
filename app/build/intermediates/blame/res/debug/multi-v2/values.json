@@ -53,9 +53,11 @@
                 {
                     "source": "/home/raguraman/AndroidStudioProjects/JLLUsers/app/src/main/res/values/colors.xml",
                     "from": {
-                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1",
-                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1",
-                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1"
+                        "startLines": "5,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "4,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "199,-1,-1,-1,-1,-1,-1,-1",
+                        "endColumns": "50,-1,-1,-1,-1,-1,-1,-1",
+                        "endOffsets": "245,-1,-1,-1,-1,-1,-1,-1"
                     },
                     "to": {
                         "startLines": "141,146,155,156,157,158,204,205",
@@ -100,12 +102,9 @@
                 {
                     "source": "/home/raguraman/AndroidStudioProjects/JLLUsers/app/src/main/res/values/styles.xml",
                     "from": {
-                        "startLines": "2,5",
-                        "startColumns": "4,4",
-                        "startOffsets": "17,113",
-                        "endLines": "3,7",
-                        "endColumns": "12,12",
-                        "endOffsets": "107,172"
+                        "startLines": "-1,-1",
+                        "startColumns": "-1,-1",
+                        "startOffsets": "-1,-1"
                     },
                     "to": {
                         "startLines": "414,416",

@@ -1,7 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:padding="20dp">
+    android:padding="20dp"
+    android:background="@color/background_color">
 
     <LinearLayout
         android:id="@+id/login_layout"
@@ -9,6 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:orientation="vertical" >
+
 
         <TextView
             android:layout_width="fill_parent"
@@ -33,11 +35,14 @@
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:textSize="16sp" />
 
-
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
 
         <EditText
             android:id="@+id/login_password"
@@ -51,8 +56,8 @@
             android:hint="@string/password"
             android:inputType="textPassword"
             android:padding="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:textSize="16sp" />
 
         <LinearLayout
@@ -68,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/show_pwd"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="14sp" />
 
             <TextView
@@ -79,22 +84,23 @@
                 android:gravity="end"
                 android:padding="5dp"
                 android:text="@string/forgot"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="14sp" />
+
         </LinearLayout>
 
         <Button
             android:id="@+id/loginBtn"
-            android:layout_width="250dp"
-            android:layout_gravity="center"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="3dp"
             android:background="@drawable/loginbutton_selector"
             android:padding="3dp"
             android:text="@string/login"
             android:textColor="@color/black"
             android:textSize="17sp"
             android:textStyle="bold" />
+
     </LinearLayout>
 
     <TextView
@@ -107,7 +113,8 @@
         android:gravity="center"
         android:padding="5dp"
         android:text="@string/newUser"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="15sp" />
+
 
 </RelativeLayout>
