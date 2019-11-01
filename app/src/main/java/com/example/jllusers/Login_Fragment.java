@@ -2,7 +2,6 @@ package com.example.jllusers;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
 import android.content.res.XmlResourceParser;
@@ -29,7 +28,6 @@ import android.widget.TextView;
 
 public class Login_Fragment extends Fragment implements OnClickListener {
     private static View view;
-
     private static EditText emailid, password;
     private static Button loginButton;
     private static TextView signUp;
@@ -155,7 +153,6 @@ public class Login_Fragment extends Fragment implements OnClickListener {
         else if (!m.find())
             new CustomToast().Show_Toast(getActivity(), view,
                     "Your Email Id is Invalid.");
-            // Else do login and do your stuff
         else
             Toast.makeText(getActivity(), "Do Login.", Toast.LENGTH_SHORT)
                     .show();
