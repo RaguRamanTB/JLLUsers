@@ -32,7 +32,7 @@ public class Login_Fragment extends Fragment implements OnClickListener {
 
     private static EditText emailid, password;
     private static Button loginButton;
-    private static TextView forgotPassword, signUp;
+    private static TextView signUp;
     private static CheckBox show_hide_password;
     private static LinearLayout loginLayout;
     private static Animation shakeAnimation;
@@ -58,7 +58,7 @@ public class Login_Fragment extends Fragment implements OnClickListener {
         emailid = (EditText) view.findViewById(R.id.login_emailid);
         password = (EditText) view.findViewById(R.id.login_password);
         loginButton = (Button) view.findViewById(R.id.loginBtn);
-        forgotPassword = (TextView) view.findViewById(R.id.forgot_password);
+//        forgotPassword = (TextView) view.findViewById(R.id.forgot_password);
         signUp = (TextView) view.findViewById(R.id.createAccount);
         show_hide_password = (CheckBox) view
                 .findViewById(R.id.show_hide_password);
@@ -71,7 +71,7 @@ public class Login_Fragment extends Fragment implements OnClickListener {
             ColorStateList csl = ColorStateList.createFromXml(getResources(),
                     xrp);
 
-            forgotPassword.setTextColor(csl);
+//            forgotPassword.setTextColor(csl);
             show_hide_password.setTextColor(csl);
             signUp.setTextColor(csl);
         } catch (Exception e) {
@@ -80,7 +80,7 @@ public class Login_Fragment extends Fragment implements OnClickListener {
 
     private void setListeners() {
         loginButton.setOnClickListener(this);
-        forgotPassword.setOnClickListener(this);
+//        forgotPassword.setOnClickListener(this);
         signUp.setOnClickListener(this);
 
         show_hide_password
@@ -118,14 +118,14 @@ public class Login_Fragment extends Fragment implements OnClickListener {
                 checkValidation();
                 break;
 
-            case R.id.forgot_password:
-                fragmentManager
-                        .beginTransaction()
-                        .setCustomAnimations(R.anim.right_enter, R.anim.left_out)
-                        .replace(R.id.frameContainer,
-                                new ForgotPassword_Fragment(),
-                                Utils.ForgotPassword_Fragment).commit();
-                break;
+//            case R.id.forgot_password:
+//                fragmentManager
+//                        .beginTransaction()
+//                        .setCustomAnimations(R.anim.right_enter, R.anim.left_out)
+//                        .replace(R.id.frameContainer,
+//                                new ForgotPassword_Fragment(),
+//                                Utils.ForgotPassword_Fragment).commit();
+//                break;
             case R.id.createAccount:
                 fragmentManager
                         .beginTransaction()

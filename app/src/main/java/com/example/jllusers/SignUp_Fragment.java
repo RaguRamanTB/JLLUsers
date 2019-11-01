@@ -2,7 +2,7 @@ package com.example.jllusers;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
@@ -20,7 +20,7 @@ import android.widget.Toast;
 public class SignUp_Fragment extends Fragment implements OnClickListener {
     private static View view;
     private static EditText fullName, emailId, mobileNumber, location,
-            password, confirmPassword;
+            password, confirmPassword, identity;
     private static TextView login;
     private static Button signUpButton;
     private static CheckBox terms_conditions;
@@ -38,20 +38,19 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
         return view;
     }
 
-    // Initialize all views
     private void initViews() {
         fullName = (EditText) view.findViewById(R.id.fullName);
         emailId = (EditText) view.findViewById(R.id.userEmailId);
         mobileNumber = (EditText) view.findViewById(R.id.mobileNumber);
         location = (EditText) view.findViewById(R.id.location);
+        identity = (EditText) view.findViewById(R.id.identity);
         password = (EditText) view.findViewById(R.id.password);
         confirmPassword = (EditText) view.findViewById(R.id.confirmPassword);
         signUpButton = (Button) view.findViewById(R.id.signUpBtn);
         login = (TextView) view.findViewById(R.id.already_user);
         terms_conditions = (CheckBox) view.findViewById(R.id.terms_conditions);
 
-        // Setting text selector over textviews
-        XmlResourceParser xrp = getResources().getXml(R.drawable.text_selector);
+        @SuppressLint("ResourceType") XmlResourceParser xrp = getResources().getXml(R.drawable.text_selector);
         try {
             ColorStateList csl = ColorStateList.createFromXml(getResources(),
                     xrp);
@@ -73,13 +72,11 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
         switch (v.getId()) {
             case R.id.signUpBtn:
 
-                // Call checkValidation method
                 checkValidation();
                 break;
 
             case R.id.already_user:
 
-                // Replace login fragment
                 new Seller().replaceLoginFragment();
                 break;
         }
@@ -89,46 +86,45 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
     // Check Validation Method
     private void checkValidation() {
 
-        // Get all edittext texts
         String getFullName = fullName.getText().toString();
         String getEmailId = emailId.getText().toString();
         String getMobileNumber = mobileNumber.getText().toString();
         String getLocation = location.getText().toString();
         String getPassword = password.getText().toString();
+        String getIdentity = identity.getText().toString();
         String getConfirmPassword = confirmPassword.getText().toString();
 
-        // Pattern match for email id
         Pattern p = Pattern.compile(Utils.regEx);
         Matcher m = p.matcher(getEmailId);
 
-        // Check if all strings are null or not
         if (getFullName.equals("") || getFullName.length() == 0
                 || getEmailId.equals("") || getEmailId.length() == 0
                 || getMobileNumber.equals("") || getMobileNumber.length() == 0
                 || getLocation.equals("") || getLocation.length() == 0
                 || getPassword.equals("") || getPassword.length() == 0
                 || getConfirmPassword.equals("")
+                || getIdentity.length() == 0 || getIdentity.equals("")
                 || getConfirmPassword.length() == 0)
 
             new CustomToast().Show_Toast(getActivity(), view,
                     "All fields are required.");
 
-            // Check if email id valid or not
         else if (!m.find())
             new CustomToast().Show_Toast(getActivity(), view,
                     "Your Email Id is Invalid.");
 
-            // Check if both password should be equal
         else if (!getConfirmPassword.equals(getPassword))
             new CustomToast().Show_Toast(getActivity(), view,
                     "Both password doesn't match.");
 
-            // Make sure user should check Terms and Conditions checkbox
         else if (!terms_conditions.isChecked())
             new CustomToast().Show_Toast(getActivity(), view,
                     "Please select Terms and Conditions.");
 
-            // Else do signup or do your stuff
+        else if (getIdentity.length() != 12)
+            new CustomToast().Show_Toast(getActivity(), view,
+                    "Please enter Valid Aadhar Number.");
+
         else
             Toast.makeText(getActivity(), "Do SignUp.", Toast.LENGTH_SHORT)
                     .show();
