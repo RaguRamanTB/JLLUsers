@@ -4,7 +4,7 @@
     android:layout_height="fill_parent"
     android:fillViewport="true"
     android:overScrollMode="never"
-    android:scrollbars="none" >
+    android:scrollbars="none">
 
     <RelativeLayout
         android:layout_width="fill_parent"

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/raguraman/AndroidStudioProjects/JLLUsers/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-vi/values-vi.xml",
+            "outputFile": "C:\\Android Projects\\JLLUsers\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-vi\\values-vi.xml",
             "map": [
                 {
-                    "source": "/home/raguraman/.gradle/caches/transforms-2/files-2.1/dfb17c32c9e1bced7bb89f3e844a7607/appcompat-1.0.2/res/values-vi/values-vi.xml",
+                    "source": "C:\\Users\\aakas\\.gradle\\caches\\transforms-2\\files-2.1\\dfb17c32c9e1bced7bb89f3e844a7607\\appcompat-1.0.2\\res\\values-vi\\values-vi.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/raguraman/.gradle/caches/transforms-2/files-2.1/e91790921c910b5c0de2045e813ad59c/play-services-base-17.0.0/res/values-vi/values.xml",
+                    "source": "C:\\Users\\aakas\\.gradle\\caches\\transforms-2\\files-2.1\\e91790921c910b5c0de2045e813ad59c\\play-services-base-17.0.0\\res\\values-vi\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/raguraman/.gradle/caches/transforms-2/files-2.1/d4ed74e2f1c09b84a06a36f8ccdb18ea/jetified-play-services-basement-17.0.0/res/values-vi/values.xml",
+                    "source": "C:\\Users\\aakas\\.gradle\\caches\\transforms-2\\files-2.1\\b169e06ec39808c17416d9059b1d4fa1\\jetified-play-services-basement-17.0.0\\res\\values-vi\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "/home/raguraman/.gradle/caches/transforms-2/files-2.1/aad09ff64bb5e019bbe1c171c65d211c/places-2.0.0/res/values-vi/values.xml",
+                    "source": "C:\\Users\\aakas\\.gradle\\caches\\transforms-2\\files-2.1\\aad09ff64bb5e019bbe1c171c65d211c\\places-2.0.0\\res\\values-vi\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",
@@ -72,7 +72,7 @@
                     }
                 },
                 {
-                    "source": "/home/raguraman/.gradle/caches/transforms-2/files-2.1/46da25c3e2ae6308b2227b660caa604d/core-1.0.1/res/values-vi/values-vi.xml",
+                    "source": "C:\\Users\\aakas\\.gradle\\caches\\transforms-2\\files-2.1\\46da25c3e2ae6308b2227b660caa604d\\core-1.0.1\\res\\values-vi\\values-vi.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

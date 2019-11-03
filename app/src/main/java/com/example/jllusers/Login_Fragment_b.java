@@ -139,6 +139,7 @@ public class Login_Fragment_b extends Fragment implements OnClickListener {
     private void checkValidation() {
         String getEmailId = emailid.getText().toString();
         String getPassword = password.getText().toString();
+        String type = "Login";
 
         Pattern p = Pattern.compile(Utils.regEx);
 
@@ -155,9 +156,13 @@ public class Login_Fragment_b extends Fragment implements OnClickListener {
             new CustomToast().Show_Toast(getActivity(), view,
                     "Your Email Id is Invalid.");
             // Else do login and do your stuff
-        else
-            Toast.makeText(getActivity(), "Do Login.", Toast.LENGTH_SHORT)
-                    .show();
+        else {
+//            Toast.makeText(getActivity(), "Do Login.", Toast.LENGTH_SHORT)
+//                    .show();
+            BackgroundWorker_b backgroundWorker = new BackgroundWorker_b(getContext());
+            backgroundWorker.execute(type, getEmailId, getPassword);
+        }
+
 
     }
 }
