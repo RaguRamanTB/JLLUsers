@@ -132,10 +132,13 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
         String getFullName = fullName.getText().toString();
         String getEmailId = emailId.getText().toString();
         String getMobileNumber = mobileNumber.getText().toString();
+        String getDob = mdob.getText().toString();
         String getLocation = location.getText().toString();
-        String getPassword = password.getText().toString();
         String getIdentity = identity.getText().toString();
+        String getPassword = password.getText().toString();
         String getConfirmPassword = confirmPassword.getText().toString();
+
+        String type = "Register";
 
         Pattern p = Pattern.compile(Utils.regEx);
         Matcher m = p.matcher(getEmailId);
@@ -146,7 +149,8 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
                 || getLocation.equals("") || getLocation.length() == 0
                 || getPassword.equals("") || getPassword.length() == 0
                 || getConfirmPassword.equals("")
-                || getIdentity.length() == 0 || getIdentity.equals("")
+                || getIdentity.length() == 0
+                || getDob.length() == 0
                 || getConfirmPassword.length() == 0)
 
             new CustomToast().Show_Toast(getActivity(), view,
@@ -168,9 +172,11 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
             new CustomToast().Show_Toast(getActivity(), view,
                     "Please enter Valid Aadhar Number.");
 
-        else
-            Toast.makeText(getActivity(), "Do SignUp.", Toast.LENGTH_SHORT)
-                    .show();
-
+        else {
+//            Toast.makeText(getActivity(), "Do SignUp.", Toast.LENGTH_SHORT)
+//                    .show();
+            BackgroundWorker backgroundWorker = new BackgroundWorker(getContext());
+            backgroundWorker.execute(type, getFullName, getEmailId, getMobileNumber, getDob, getLocation, getIdentity, getPassword);
+        }
     }
 }

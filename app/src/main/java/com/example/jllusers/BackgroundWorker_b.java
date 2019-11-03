@@ -28,7 +28,8 @@ public class BackgroundWorker_b extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String... voids) {
         String type = voids[0];
-        String login_url = "http://10.11.208.22:8089/login_b.php";
+        String login_url = "http://10.11.208.22/login_b.php";
+        String register_url = "http://10.11.208.22/register_b.php";
         if (type.equals("Login")) {
             try {
                 String getEmailId = voids[1];
@@ -43,6 +44,53 @@ public class BackgroundWorker_b extends AsyncTask<String, Void, String> {
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
                 String post_data = URLEncoder.encode("getEmailId","UTF-8")+"="+URLEncoder.encode(getEmailId,"UTF-8")+"&"
+                        +URLEncoder.encode("getPassword","UTF-8")+"="+URLEncoder.encode(getPassword,"UTF-8");
+                bufferedWriter.write(post_data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();
+
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
+                String result="";
+                String line="";
+                while ((line = bufferedReader.readLine())!=null) {
+                    result += line;
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                return result;
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else if (type.equals("Register")) {
+            try {
+                String getFullName = voids[1];
+                String getEmailId = voids[2];
+                String getMobileNumber = voids[3];
+                String getDob = voids[4];
+                String getLocation = voids[5];
+                String getIdentity = voids[6];
+                String getPassword = voids[7];
+                URL url = new URL(register_url);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setDoInput(true);
+
+
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+                String post_data = URLEncoder.encode("getFullName","UTF-8")+"="+URLEncoder.encode(getFullName,"UTF-8")+"&"
+                        +URLEncoder.encode("getEmailId","UTF-8")+"="+URLEncoder.encode(getEmailId,"UTF-8")+"&"
+                        +URLEncoder.encode("getMobileNumber","UTF-8")+"="+URLEncoder.encode(getMobileNumber,"UTF-8")+"&"
+                        +URLEncoder.encode("getDob","UTF-8")+"="+URLEncoder.encode(getDob,"UTF-8")+"&"
+                        +URLEncoder.encode("getLocation","UTF-8")+"="+URLEncoder.encode(getLocation,"UTF-8")+"&"
+                        +URLEncoder.encode("getIdentity","UTF-8")+"="+URLEncoder.encode(getIdentity,"UTF-8")+"&"
                         +URLEncoder.encode("getPassword","UTF-8")+"="+URLEncoder.encode(getPassword,"UTF-8");
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
