@@ -2,6 +2,7 @@ package com.example.jllusers;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 
 import java.io.BufferedReader;
@@ -28,8 +29,8 @@ public class BackgroundWorker_b extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String... voids) {
         String type = voids[0];
-        String login_url = "http://10.11.208.22/login_b.php";
-        String register_url = "http://10.11.208.22/register_b.php";
+        String login_url = "http://63e206c0.ngrok.io/login_b.php";
+        String register_url = "http://63e206c0.ngrok.io/register_b.php";
         if (type.equals("Login")) {
             try {
                 String getEmailId = voids[1];
@@ -128,6 +129,11 @@ public class BackgroundWorker_b extends AsyncTask<String, Void, String> {
     protected void onPostExecute(String result) {
         alertDialog.setMessage(result);
         alertDialog.show();
+        if (result.equals("Login Success!")) {
+            Intent i = new Intent(context,Registrar_Options.class);
+            context.startActivity(i);
+            alertDialog.hide();
+        }
     }
 
     @Override

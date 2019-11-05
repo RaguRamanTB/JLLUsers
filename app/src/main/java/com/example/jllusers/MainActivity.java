@@ -15,12 +15,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToSeller (View view) {
-        Intent intent = new Intent(this, Seller.class);
+        Intent intent = new Intent(this, User.class);
         startActivity(intent);
     }
 
     public void goToBuyer (View view) {
-        Intent in = new Intent(this, Buyer.class);
+        Intent in = new Intent(this, Registrar.class);
         startActivity(in);
     }
 }

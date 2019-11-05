@@ -65,7 +65,7 @@ public class ForgotPassword_Fragment extends Fragment implements
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.backToLoginBtn:
-                new Seller().replaceLoginFragment();
+                new User().replaceLoginFragment();
                 break;
 
             case R.id.forgot_button:

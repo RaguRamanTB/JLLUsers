@@ -22,7 +22,6 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class SignUp_Fragment extends Fragment implements OnClickListener {
 
@@ -120,7 +119,7 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
 
             case R.id.already_user:
 
-                new Seller().replaceLoginFragment();
+                new User().replaceLoginFragment();
                 break;
         }
 

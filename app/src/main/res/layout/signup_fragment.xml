@@ -121,6 +121,12 @@
         android:textColorHint="@color/white"
         android:textSize="16sp" />
 
+<!--    <fragment-->
+<!--        android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"-->
+<!--        android:id="@+id/autocomplete_fragment"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content" />-->
+
     <View
         android:layout_width="fill_parent"
         android:layout_height="1px"

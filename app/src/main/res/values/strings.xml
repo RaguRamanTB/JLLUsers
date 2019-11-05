@@ -15,7 +15,7 @@
     <string name="newUser">Not a Member yet? Sign Up here.</string>
     <string name="fullName">Full Name</string>
     <string name="mobileNumber">Mobile Number</string>
-    <string name="location">Location</string>
+    <string name="location">Location (City)</string>
     <string name="identity">Aadhar Number</string>
     <string name="confirmPassword">Confirm Password</string>
     <string name="terms_conditions">By clicking SignUp you agree that all the details given above are true to your knowledge.</string>
@@ -26,4 +26,14 @@
     <string name="back">BACK</string>
     <string name="api_key">changeme</string>
     <string name="date_of_birth">Date of Birth</string>
+    <string name="user">USER</string>
+    <string name="registrar">REGISTRAR</string>
+    <string name="user_options">USER OPTIONS</string>
+    <string name="buy">BUY</string>
+    <string name="sell">SELL</string>
+    <string name="view_my_assets">VIEW MY ASSETS</string>
+    <string name="registrar_options">REGISTRAR OPTIONS</string>
+    <string name="land_registration">LAND REGISTRATION</string>
+    <string name="asset_modification">ASSET MODIFICATION</string>
+    <string name="asset_creation">ASSET CREATION</string>
 </resources>

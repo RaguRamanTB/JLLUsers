@@ -5,7 +5,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
-import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.content.res.XmlResourceParser;
 import android.graphics.Color;
@@ -23,7 +22,6 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class SignUp_Fragment_b extends Fragment implements OnClickListener {
 
@@ -115,7 +113,7 @@ public class SignUp_Fragment_b extends Fragment implements OnClickListener {
                 break;
 
             case R.id.already_user_b:
-                new Buyer().replaceLoginFragment();
+                new Registrar().replaceLoginFragment();
                 break;
         }
 

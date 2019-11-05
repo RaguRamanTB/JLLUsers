@@ -1358,6 +1358,7 @@ id title_template
 id toast_error
 id toast_root
 id top
+id topLinear
 id topPanel
 id uniform
 id up
@@ -1402,9 +1403,11 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_buyer
 layout activity_main
-layout activity_seller
+layout activity_registrar
+layout activity_registrar__options
+layout activity_user
+layout activity_user__options
 layout custom_toast
 layout forgotpassword_layout
 layout login_layout
@@ -1476,7 +1479,10 @@ string action_settings
 string already_user
 string api_key
 string app_name
+string asset_creation
+string asset_modification
 string back
+string buy
 string buyer
 string closebutton
 string common_google_play_services_enable_button
@@ -1505,6 +1511,7 @@ string forgot
 string fullName
 string hide_pwd
 string identity
+string land_registration
 string location
 string login
 string mobileNumber
@@ -1519,7 +1526,10 @@ string places_powered_by_google
 string places_search_error
 string places_try_again
 string registered_emailid
+string registrar
+string registrar_options
 string search_menu_title
+string sell
 string seller
 string show_pwd
 string signUp
@@ -1527,6 +1537,9 @@ string status_bar_notification_info_overflow
 string submit
 string tagline
 string terms_conditions
+string user
+string user_options
+string view_my_assets
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
