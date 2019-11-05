@@ -36,4 +36,12 @@
     <string name="land_registration">LAND REGISTRATION</string>
     <string name="asset_modification">ASSET MODIFICATION</string>
     <string name="asset_creation">ASSET CREATION</string>
+    <string name="buying_options">BUYING OPTIONS</string>
+    <string name="search_by">SEARCH BY</string>
+    <string name="city">CITY</string>
+    <string name="survey_no">SURVEY NO.</string>
+    <string name="view_response_for_requests">VIEW RESPONSE FOR REQUESTS</string>
+    <string name="selling_options">SELLING OPTIONS</string>
+    <string name="requests">REQUESTS</string>
+    <string name="check_for_buy_requests">CHECK FOR BUY REQUESTS</string>
 </resources>

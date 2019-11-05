@@ -1155,6 +1155,8 @@ id META
 id SHIFT
 id SYM
 id Seller
+id a_creation
+id a_modification
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1190,6 +1192,7 @@ id beginning
 id blocking
 id bottom
 id buttonPanel
+id buy
 id center
 id center_horizontal
 id center_vertical
@@ -1302,6 +1305,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id registered_emailid
+id registration
 id right
 id right_icon
 id right_side
@@ -1321,6 +1325,7 @@ id search_plate
 id search_src_text
 id search_voice_btn
 id select_dialog_listview
+id sell
 id shortcut
 id showCustom
 id showHome
@@ -1365,6 +1370,7 @@ id up
 id useLogo
 id userEmailId
 id userEmailId_b
+id viewMyAssets
 id wide
 id withText
 id wrap
@@ -1403,11 +1409,14 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_buy
 layout activity_main
 layout activity_registrar
 layout activity_registrar__options
+layout activity_sell
 layout activity_user
 layout activity_user__options
+layout activity_view__assets
 layout custom_toast
 layout forgotpassword_layout
 layout login_layout
@@ -1484,6 +1493,8 @@ string asset_modification
 string back
 string buy
 string buyer
+string buying_options
+string city
 string closebutton
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
@@ -1528,6 +1539,7 @@ string places_try_again
 string registered_emailid
 string registrar
 string registrar_options
+string search_by
 string search_menu_title
 string sell
 string seller
@@ -1535,11 +1547,13 @@ string show_pwd
 string signUp
 string status_bar_notification_info_overflow
 string submit
+string survey_no
 string tagline
 string terms_conditions
 string user
 string user_options
 string view_my_assets
+string view_response_for_requests
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

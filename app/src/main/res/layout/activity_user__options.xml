@@ -57,7 +57,8 @@
             android:text="@string/buy"
             android:textColor="#000000"
             android:textSize="17sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="goToBuy"/>
 
         <Button
             android:id="@+id/sell"
@@ -69,7 +70,8 @@
             android:text="@string/sell"
             android:textColor="#000000"
             android:textSize="17sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="goToSell"/>
 
         <Button
             android:id="@+id/viewMyAssets"
@@ -81,7 +83,8 @@
             android:text="@string/view_my_assets"
             android:textColor="#000000"
             android:textSize="17sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="goToView"/>
 
     </LinearLayout>
 

@@ -12,7 +12,10 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
-        <activity android:name=".Registrar_Options"></activity>
+        <activity android:name=".View_Assets"></activity>
+        <activity android:name=".Sell" />
+        <activity android:name=".Buy" />
+        <activity android:name=".Registrar_Options" />
         <activity android:name=".User_Options" />
         <activity android:name=".Registrar" />
         <activity android:name=".User" />
