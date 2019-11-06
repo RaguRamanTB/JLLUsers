@@ -11,8 +11,8 @@
 9-->C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:31:5-67
-11-->C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:31:22-64
+11-->C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:32:5-67
+11-->C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:32:22-64
 12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 12-->[com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:9:5-79
 12-->[com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:9:22-76
@@ -31,7 +31,7 @@
 18-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
 19
 20    <application
-20-->C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:6:5-29:19
+20-->C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:6:5-30:19
 21        android:allowBackup="true"
 21-->C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:7:9-35
 22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -85,44 +85,51 @@
 42-->C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:26:27-74
 43            </intent-filter>
 44        </activity>
-45        <!-- Autocomplete -->
-46        <activity
-46-->[com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:16:9-23:20
-47            android:name="com.google.android.libraries.places.widget.AutocompleteActivity"
-47-->[com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:17:13-91
-48            android:exported="false"
-48-->[com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:18:13-37
-49            android:hardwareAccelerated="true"
-49-->[com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:19:13-47
-50            android:label="@string/places_autocomplete_label"
-50-->[com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:20:13-62
-51            android:theme="@style/PlacesAutocompleteThemeOverlay"
-51-->[com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:21:13-66
-52            android:windowSoftInputMode="stateAlwaysVisible|adjustPan" >
-52-->[com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:22:13-71
-53        </activity> <!-- Needs to be explicitly declared on P+ -->
-54        <uses-library
-54-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
-55            android:name="org.apache.http.legacy"
-55-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
-56            android:required="false" />
-56-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
-57
-58        <activity
-58-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\e91790921c910b5c0de2045e813ad59c\play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
-59            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-59-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\e91790921c910b5c0de2045e813ad59c\play-services-base-17.0.0\AndroidManifest.xml:24:13-79
-60            android:exported="false"
-60-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\e91790921c910b5c0de2045e813ad59c\play-services-base-17.0.0\AndroidManifest.xml:25:13-37
-61            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-61-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\e91790921c910b5c0de2045e813ad59c\play-services-base-17.0.0\AndroidManifest.xml:26:13-72
-62
-63        <meta-data
-63-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\b169e06ec39808c17416d9059b1d4fa1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-64            android:name="com.google.android.gms.version"
-64-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\b169e06ec39808c17416d9059b1d4fa1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-65            android:value="@integer/google_play_services_version" />
-65-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\b169e06ec39808c17416d9059b1d4fa1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-66    </application>
-67
-68</manifest>
+45
+46        <meta-data
+46-->C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:29:9-123
+47            android:name="com.google.android.geo.API_KEY"
+47-->C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:29:20-65
+48            android:value="AIzaSyA-jTNigOJ8f3zQ6qketJ1QRVLTy7rkduo" />
+48-->C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:29:66-121
+49        <!-- Autocomplete -->
+50        <activity
+50-->[com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:16:9-23:20
+51            android:name="com.google.android.libraries.places.widget.AutocompleteActivity"
+51-->[com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:17:13-91
+52            android:exported="false"
+52-->[com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:18:13-37
+53            android:hardwareAccelerated="true"
+53-->[com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:19:13-47
+54            android:label="@string/places_autocomplete_label"
+54-->[com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:20:13-62
+55            android:theme="@style/PlacesAutocompleteThemeOverlay"
+55-->[com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:21:13-66
+56            android:windowSoftInputMode="stateAlwaysVisible|adjustPan" >
+56-->[com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:22:13-71
+57        </activity> <!-- Needs to be explicitly declared on P+ -->
+58        <uses-library
+58-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+59            android:name="org.apache.http.legacy"
+59-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+60            android:required="false" />
+60-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+61
+62        <activity
+62-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\e91790921c910b5c0de2045e813ad59c\play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+63            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+63-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\e91790921c910b5c0de2045e813ad59c\play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+64            android:exported="false"
+64-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\e91790921c910b5c0de2045e813ad59c\play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+65            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+65-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\e91790921c910b5c0de2045e813ad59c\play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+66
+67        <meta-data
+67-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\b169e06ec39808c17416d9059b1d4fa1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+68            android:name="com.google.android.gms.version"
+68-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\b169e06ec39808c17416d9059b1d4fa1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+69            android:value="@integer/google_play_services_version" />
+69-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\b169e06ec39808c17416d9059b1d4fa1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+70    </application>
+71
+72</manifest>

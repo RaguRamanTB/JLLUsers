@@ -44,4 +44,5 @@
     <string name="selling_options">SELLING OPTIONS</string>
     <string name="requests">REQUESTS</string>
     <string name="check_for_buy_requests">CHECK FOR BUY REQUESTS</string>
+    <string name="locate">Locate</string>
 </resources>

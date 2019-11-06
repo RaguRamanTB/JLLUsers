@@ -1,19 +1,20 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:2:1-33:12
+ADDED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:2:1-34:12
 MERGED from [com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:2:1-26:12
 MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\dfb17c32c9e1bced7bb89f3e844a7607\appcompat-1.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-places:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\655f9d752d57d28116b0eb06ad86294e\play-services-places-17.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\c1763829f79bc3811543d2bb9a22b866\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:17:1-38:12
 MERGED from [com.google.android.gms:play-services-clearcut:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\3d0bda901b789f041e9b0dc4ca519eb7\play-services-clearcut-17.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\e968b7524a6b794872ab644fee36a27d\play-services-location-17.0.0\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:17:1-38:12
 MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\f7ce85e27fd1a3bf0baca4e069a64ab3\play-services-phenotype-17.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\e91790921c910b5c0de2045e813ad59c\play-services-base-17.0.0\AndroidManifest.xml:17:1-29:12
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\287346e905cd20ad06ee512960ac8325\play-services-tasks-17.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\80f07f8b74f8cb6669872d790c31d271\play-services-places-placereport-17.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\287346e905cd20ad06ee512960ac8325\play-services-tasks-17.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\b169e06ec39808c17416d9059b1d4fa1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\25bfa9abbe57efa7109f3ed8175af34b\fragment-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\91a2e0650e476867729e44e6c1acc534\vectordrawable-animated-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -43,45 +44,47 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\aakas\.g
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\e72949b043b8df7a6068dab5e7cd21f2\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\2d1f640c1b4beb33089ff5c91bbd7f31\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\2ad02d71575244b049e45c8f57fdc726\jetified-volley-1.1.1\AndroidManifest.xml:2:1-11:12
-INJECTED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:2:1-34:12
 	package
 		ADDED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:4:5-35
 		INJECTED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml
-		ADDED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:2:1-33:12
+		ADDED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:2:1-34:12
 		INJECTED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml
-		ADDED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:2:1-33:12
+		ADDED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:2:1-34:12
 		INJECTED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:6:5-29:19
+ADDED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:6:5-30:19
 MERGED from [com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:13:5-24:19
 MERGED from [com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:13:5-24:19
+MERGED from [com.google.android.gms:play-services-places:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\655f9d752d57d28116b0eb06ad86294e\play-services-places-17.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\655f9d752d57d28116b0eb06ad86294e\play-services-places-17.0.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\c1763829f79bc3811543d2bb9a22b866\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\c1763829f79bc3811543d2bb9a22b866\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:30:5-36:19
 MERGED from [com.google.android.gms:play-services-clearcut:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\3d0bda901b789f041e9b0dc4ca519eb7\play-services-clearcut-17.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-clearcut:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\3d0bda901b789f041e9b0dc4ca519eb7\play-services-clearcut-17.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\e968b7524a6b794872ab644fee36a27d\play-services-location-17.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\e968b7524a6b794872ab644fee36a27d\play-services-location-17.0.0\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:30:5-36:19
-MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:30:5-36:19
 MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\f7ce85e27fd1a3bf0baca4e069a64ab3\play-services-phenotype-17.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\f7ce85e27fd1a3bf0baca4e069a64ab3\play-services-phenotype-17.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\e91790921c910b5c0de2045e813ad59c\play-services-base-17.0.0\AndroidManifest.xml:22:5-27:19
 MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\e91790921c910b5c0de2045e813ad59c\play-services-base-17.0.0\AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\287346e905cd20ad06ee512960ac8325\play-services-tasks-17.0.0\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\287346e905cd20ad06ee512960ac8325\play-services-tasks-17.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\80f07f8b74f8cb6669872d790c31d271\play-services-places-placereport-17.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\80f07f8b74f8cb6669872d790c31d271\play-services-places-placereport-17.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\287346e905cd20ad06ee512960ac8325\play-services-tasks-17.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\287346e905cd20ad06ee512960ac8325\play-services-tasks-17.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\b169e06ec39808c17416d9059b1d4fa1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\b169e06ec39808c17416d9059b1d4fa1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.core:core:1.0.1] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\46da25c3e2ae6308b2227b660caa604d\core-1.0.1\AndroidManifest.xml:22:5-89
@@ -150,14 +153,20 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:26:17-77
 	android:name
 		ADDED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:26:27-74
+meta-data#com.google.android.geo.API_KEY
+ADDED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:29:9-123
+	android:value
+		ADDED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:29:66-121
+	android:name
+		ADDED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:29:20-65
 uses-permission#android.permission.INTERNET
-ADDED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:31:5-67
+ADDED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:32:5-67
 MERGED from [com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:11:5-67
 MERGED from [com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:11:5-67
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:24:5-67
 	android:name
-		ADDED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:31:22-64
+		ADDED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:32:22-64
 uses-sdk
 INJECTED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml
@@ -166,22 +175,24 @@ MERGED from [com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.g
 MERGED from [com.google.android.libraries.places:places:2.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\aad09ff64bb5e019bbe1c171c65d211c\places-2.0.0\AndroidManifest.xml:7:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\dfb17c32c9e1bced7bb89f3e844a7607\appcompat-1.0.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\dfb17c32c9e1bced7bb89f3e844a7607\appcompat-1.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\655f9d752d57d28116b0eb06ad86294e\play-services-places-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\655f9d752d57d28116b0eb06ad86294e\play-services-places-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\c1763829f79bc3811543d2bb9a22b866\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\c1763829f79bc3811543d2bb9a22b866\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-clearcut:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\3d0bda901b789f041e9b0dc4ca519eb7\play-services-clearcut-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-clearcut:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\3d0bda901b789f041e9b0dc4ca519eb7\play-services-clearcut-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\e968b7524a6b794872ab644fee36a27d\play-services-location-17.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\e968b7524a6b794872ab644fee36a27d\play-services-location-17.0.0\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\1b9026f860ab6935418a182675a0a44a\play-services-maps-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\f7ce85e27fd1a3bf0baca4e069a64ab3\play-services-phenotype-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-phenotype:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\f7ce85e27fd1a3bf0baca4e069a64ab3\play-services-phenotype-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\e91790921c910b5c0de2045e813ad59c\play-services-base-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\e91790921c910b5c0de2045e813ad59c\play-services-base-17.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\287346e905cd20ad06ee512960ac8325\play-services-tasks-17.0.0\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\287346e905cd20ad06ee512960ac8325\play-services-tasks-17.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\80f07f8b74f8cb6669872d790c31d271\play-services-places-placereport-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\80f07f8b74f8cb6669872d790c31d271\play-services-places-placereport-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\287346e905cd20ad06ee512960ac8325\play-services-tasks-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\287346e905cd20ad06ee512960ac8325\play-services-tasks-17.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\b169e06ec39808c17416d9059b1d4fa1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\b169e06ec39808c17416d9059b1d4fa1\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\aakas\.gradle\caches\transforms-2\files-2.1\25bfa9abbe57efa7109f3ed8175af34b\fragment-1.0.0\AndroidManifest.xml:20:5-44

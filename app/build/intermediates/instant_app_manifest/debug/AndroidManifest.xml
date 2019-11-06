@@ -43,6 +43,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA-jTNigOJ8f3zQ6qketJ1QRVLTy7rkduo" />
         <!-- Autocomplete -->
         <activity
             android:name="com.google.android.libraries.places.widget.AutocompleteActivity"

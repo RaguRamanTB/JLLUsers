@@ -1,15 +1,20 @@
 package com.example.jllusers;
 
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.content.res.XmlResourceParser;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -22,18 +27,34 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.api.model.TypeFilter;
+import com.google.android.libraries.places.api.net.PlacesClient;
+import com.google.android.libraries.places.widget.Autocomplete;
+import com.google.android.libraries.places.widget.AutocompleteActivity;
+import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
+import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
+import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
+
+import static android.app.Activity.RESULT_CANCELED;
+import static android.app.Activity.RESULT_OK;
 
 public class SignUp_Fragment extends Fragment implements OnClickListener {
 
     private static final String TAG = "SignUp_Fragment";
-    private TextView mdob;
+    private TextView location,mdob;
     private DatePickerDialog.OnDateSetListener mdate;
     private static View view;
-    private static EditText fullName, emailId, mobileNumber, location,
-            password, confirmPassword, identity;
+    private static EditText fullName, emailId, mobileNumber, password, confirmPassword, identity;
     private static TextView login;
-    private static Button signUpButton;
+    private static Button signUpButton, locateButton;
     private static CheckBox terms_conditions;
+
 
     public SignUp_Fragment() {
 
@@ -43,6 +64,9 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.signup_fragment, container, false);
+
+
+        String apikey = "AIzaSyA-jTNigOJ8f3zQ6qketJ1QRVLTy7rkduo";
 
         mdob = (TextView) view.findViewById(R.id.dob);
         mdob.setOnClickListener(new OnClickListener() {
@@ -73,6 +97,9 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
             }
         };
 
+        if(!Places.isInitialized()) {
+            Places.initialize(getContext(),apikey);
+        }
         initViews();
         setListeners();
         return view;
@@ -83,11 +110,12 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
         fullName = (EditText) view.findViewById(R.id.fullName);
         emailId = (EditText) view.findViewById(R.id.userEmailId);
         mobileNumber = (EditText) view.findViewById(R.id.mobileNumber);
-        location = (EditText) view.findViewById(R.id.location);
+        location = (TextView) view.findViewById(R.id.location);
         identity = (EditText) view.findViewById(R.id.identity);
         password = (EditText) view.findViewById(R.id.password);
         confirmPassword = (EditText) view.findViewById(R.id.confirmPassword);
         signUpButton = (Button) view.findViewById(R.id.signUpBtn);
+        locateButton = (Button) view.findViewById(R.id.located);
         login = (TextView) view.findViewById(R.id.already_user);
         terms_conditions = (CheckBox) view.findViewById(R.id.terms_conditions);
 
@@ -104,23 +132,53 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
 
     // Set Listeners
     private void setListeners() {
-
+        locateButton.setOnClickListener(this);
         signUpButton.setOnClickListener(this);
         login.setOnClickListener(this);
+    }
+
+    public void searchLoc() {
+        int AUTOCOMPLETE_REQUEST_CODE = 1;
+        List<Place.Field> fields = Arrays.asList(Place.Field.ID, Place.Field.NAME);
+        Intent intent = new Autocomplete.IntentBuilder(
+                AutocompleteActivityMode.FULLSCREEN, fields)
+                .setTypeFilter(TypeFilter.CITIES)
+                .build(getContext());
+        startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                Place place = Autocomplete.getPlaceFromIntent(data);
+                Log.i(TAG, "Place: " + place.getName() + ", " + place.getId());
+                location.setText(place.getName());
+            } else if (resultCode == AutocompleteActivity.RESULT_ERROR) {
+                // TODO: Handle the error.
+                Status status = Autocomplete.getStatusFromIntent(data);
+                Log.i(TAG, status.getStatusMessage());
+            } else if (resultCode == RESULT_CANCELED) {
+                // The user canceled the operation.
+            }
+        }
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.signUpBtn:
+            case R.id.located:
+                searchLoc();
+                break;
 
+            case R.id.signUpBtn:
                 checkValidation();
                 break;
 
             case R.id.already_user:
-
                 new User().replaceLoginFragment();
                 break;
+
         }
 
     }
