@@ -25,8 +25,4 @@ public class User_Options extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goToView (View view) {
-        Intent intent = new Intent(this, View_Assets.class);
-        startActivity(intent);
-    }
 }

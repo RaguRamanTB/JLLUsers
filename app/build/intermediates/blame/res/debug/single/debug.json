@@ -340,6 +340,10 @@
         "source": "C:\\Users\\aakas\\.gradle\\caches\\transforms-2\\files-2.1\\dfb17c32c9e1bced7bb89f3e844a7607\\appcompat-1.0.2\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },
     {
+        "merged": "C:\\Android Projects\\JLLUsers\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_view.xml.flat",
+        "source": "C:\\Android Projects\\JLLUsers\\app\\src\\main\\res\\layout\\list_view.xml"
+    },
+    {
         "merged": "C:\\Android Projects\\JLLUsers\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_content_include.xml.flat",
         "source": "C:\\Users\\aakas\\.gradle\\caches\\transforms-2\\files-2.1\\dfb17c32c9e1bced7bb89f3e844a7607\\appcompat-1.0.2\\res\\layout\\abc_screen_content_include.xml"
     },
@@ -1506,6 +1510,10 @@
     {
         "merged": "C:\\Android Projects\\JLLUsers\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\aakas\\.gradle\\caches\\transforms-2\\files-2.1\\dfb17c32c9e1bced7bb89f3e844a7607\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "C:\\Android Projects\\JLLUsers\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_selling__items.xml.flat",
+        "source": "C:\\Android Projects\\JLLUsers\\app\\src\\main\\res\\layout\\activity_selling__items.xml"
     },
     {
         "merged": "C:\\Android Projects\\JLLUsers\\app\\build\\intermediates\\res\\merged\\debug\\layout_select_dialog_singlechoice_material.xml.flat",

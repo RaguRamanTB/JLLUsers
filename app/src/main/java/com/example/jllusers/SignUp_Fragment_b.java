@@ -1,8 +1,10 @@
 package com.example.jllusers;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import android.annotation.SuppressLint;
@@ -12,6 +14,7 @@ import android.content.res.ColorStateList;
 import android.content.res.XmlResourceParser;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
@@ -25,6 +28,7 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.api.Status;
 import com.google.android.libraries.places.api.Places;
@@ -33,6 +37,15 @@ import com.google.android.libraries.places.api.model.TypeFilter;
 import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.libraries.places.widget.AutocompleteActivity;
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
+import com.squareup.okhttp.Call;
+import com.squareup.okhttp.MediaType;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import static android.app.Activity.RESULT_CANCELED;
 import static android.app.Activity.RESULT_OK;
@@ -40,13 +53,22 @@ import static android.app.Activity.RESULT_OK;
 public class SignUp_Fragment_b extends Fragment implements OnClickListener {
 
     private static final String TAG = "SignUp_Fragment";
-    private TextView location, mdob;
+    private TextView location,branch, mdob;
     private DatePickerDialog.OnDateSetListener mdate;
     private static View view;
     private static EditText fullName, emailId, mobileNumber, password, confirmPassword, identity;
     private static TextView login;
-    private static Button signUpButton, locateButton;
+    private static Button signUpButton, locateButton, branchLocation;
     private static CheckBox terms_conditions;
+
+    private static String JSON = "";
+    private static String JS2 = "";
+
+    static int range = 999;
+    static Random rn = new Random();
+    static int randNum = rn.nextInt(range);
+    static String rm = Integer.toString(randNum);
+    static String getEmpId = "E-"+rm;
 
     public SignUp_Fragment_b() {
 
@@ -102,11 +124,13 @@ public class SignUp_Fragment_b extends Fragment implements OnClickListener {
         emailId = (EditText) view.findViewById(R.id.userEmailId_b);
         mobileNumber = (EditText) view.findViewById(R.id.mobileNumber_b);
         location = (TextView) view.findViewById(R.id.location_b);
+        branch = (TextView) view.findViewById(R.id.branch);
         identity = (EditText) view.findViewById(R.id.identity_b);
         password = (EditText) view.findViewById(R.id.password_b);
         confirmPassword = (EditText) view.findViewById(R.id.confirmPassword_b);
         signUpButton = (Button) view.findViewById(R.id.signUpBtn_b);
         locateButton = (Button) view.findViewById(R.id.located_b);
+        branchLocation = (Button) view.findViewById(R.id.branch_b);
         login = (TextView) view.findViewById(R.id.already_user_b);
         terms_conditions = (CheckBox) view.findViewById(R.id.terms_conditions_b);
 
@@ -124,11 +148,22 @@ public class SignUp_Fragment_b extends Fragment implements OnClickListener {
     private void setListeners() {
         locateButton.setOnClickListener(this);
         signUpButton.setOnClickListener(this);
+        branchLocation.setOnClickListener(this);
         login.setOnClickListener(this);
     }
 
     public void searchLoc() {
         int AUTOCOMPLETE_REQUEST_CODE = 1;
+        List<Place.Field> fields = Arrays.asList(Place.Field.ID, Place.Field.NAME);
+        Intent intent = new Autocomplete.IntentBuilder(
+                AutocompleteActivityMode.FULLSCREEN, fields)
+                .setTypeFilter(TypeFilter.CITIES)
+                .build(getContext());
+        startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
+    }
+
+    public void searchLoc2() {
+        int AUTOCOMPLETE_REQUEST_CODE = 2;
         List<Place.Field> fields = Arrays.asList(Place.Field.ID, Place.Field.NAME);
         Intent intent = new Autocomplete.IntentBuilder(
                 AutocompleteActivityMode.FULLSCREEN, fields)
@@ -151,6 +186,18 @@ public class SignUp_Fragment_b extends Fragment implements OnClickListener {
             } else if (resultCode == RESULT_CANCELED) {
                 // The user canceled the operation.
             }
+        } else if (requestCode == 2) {
+            if (resultCode == RESULT_OK) {
+                Place place = Autocomplete.getPlaceFromIntent(data);
+                Log.i(TAG, "Place: " + place.getName() + ", " + place.getId());
+                branch.setText(place.getName());
+            } else if (resultCode == AutocompleteActivity.RESULT_ERROR) {
+                // TODO: Handle the error.
+                Status status = Autocomplete.getStatusFromIntent(data);
+                Log.i(TAG, status.getStatusMessage());
+            } else if (resultCode == RESULT_CANCELED) {
+                // The user canceled the operation.
+            }
         }
     }
 
@@ -159,6 +206,10 @@ public class SignUp_Fragment_b extends Fragment implements OnClickListener {
         switch (v.getId()) {
             case R.id.located_b:
                 searchLoc();
+                break;
+
+            case R.id.branch_b:
+                searchLoc2();
                 break;
 
             case R.id.signUpBtn_b:
@@ -172,6 +223,122 @@ public class SignUp_Fragment_b extends Fragment implements OnClickListener {
 
     }
 
+    public void putJSON () {
+        String getFullName = fullName.getText().toString();
+        String getEmailId = emailId.getText().toString();
+        String getMobileNumber = mobileNumber.getText().toString();
+        String getDob = mdob.getText().toString();
+        String getLocation = location.getText().toString();
+        String getIdentity = identity.getText().toString();
+
+        final JSONObject upload = new JSONObject();
+        try {
+            upload.put("$class","org.jll.hack.Person");
+            upload.put("govt_id",getIdentity);
+            upload.put("name",getFullName);
+            upload.put("dob",getDob);
+            upload.put("email",getEmailId);
+            upload.put("phone_num",getMobileNumber);
+            upload.put("location",getLocation);
+            upload.put("city",getLocation);
+            JSON = upload.toString();
+            sendDataToServer(JSON);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void sendDataToServer(String json) {
+        final String JSON = json;
+        new AsyncTask<Void, Void, String>() {
+
+            @Override
+            protected String doInBackground(Void... voids) {
+                return getServerResponse(JSON);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+//                Toast.makeText(getContext(), "User Data Uploaded!", Toast.LENGTH_LONG).show();
+            }
+        }.execute();
+    }
+
+    private String getServerResponse(String json) {
+        final String BASE_URL = "https://7f45ac9d.ngrok.io/api/Person";
+        OkHttpClient okHttpClient = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url(BASE_URL)
+                .post(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json))
+                .build();
+
+        Call call = okHttpClient.newCall (request);
+        Response response = null;
+
+        try {
+            response = call.execute();
+            return response.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "Unable to contact server!";
+    }
+
+    public void putJSON2 (){
+        String getIdentity = identity.getText().toString();
+        String getOffice = branch.getText().toString();
+        String link = "org.jll.hack.Person#"+getIdentity;
+        final JSONObject upload2 = new JSONObject();
+        try {
+            upload2.put("$class","org.jll.hack.Registrar");
+            upload2.put("employee_id",getEmpId);
+            upload2.put("person",link);
+            upload2.put("office_branch",getOffice);
+            JS2 = upload2.toString();
+            Toast.makeText(getContext(),JS2,Toast.LENGTH_LONG).show();
+            Log.e("TAG",JS2);
+            sendDataToServer2(JS2);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void sendDataToServer2(String json) {
+        final String JSON = json;
+        new AsyncTask<Void, Void, String>() {
+
+            @Override
+            protected String doInBackground(Void... voids) {
+                return getServerResponse2(JSON);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+            }
+        }.execute();
+    }
+
+    private String getServerResponse2(String json) {
+        final String BASE_URL = "https://7f45ac9d.ngrok.io/api/Registrar";
+        OkHttpClient okHttpClient = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url(BASE_URL)
+                .post(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json))
+                .build();
+
+        Call call = okHttpClient.newCall (request);
+        Response response = null;
+
+        try {
+            response = call.execute();
+            return response.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "Unable to contact server!";
+    }
+
+
     private void checkValidation() {
 
         String getFullName = fullName.getText().toString();
@@ -181,6 +348,7 @@ public class SignUp_Fragment_b extends Fragment implements OnClickListener {
         String getLocation = location.getText().toString();
         String getPassword = password.getText().toString();
         String getIdentity = identity.getText().toString();
+        String getBranch = branch.getText().toString();
         String getConfirmPassword = confirmPassword.getText().toString();
 
         String type = "Register";
@@ -194,7 +362,7 @@ public class SignUp_Fragment_b extends Fragment implements OnClickListener {
                 || getMobileNumber.equals("") || getMobileNumber.length() == 0
                 || getLocation.equals("") || getLocation.length() == 0
                 || getPassword.equals("") || getPassword.length() == 0
-                || getConfirmPassword.equals("")
+                || getConfirmPassword.equals("") || getBranch.equals("")
                 || getIdentity.length() == 0
                 || getDob.length() == 0
                 || getConfirmPassword.length() == 0)
@@ -218,10 +386,10 @@ public class SignUp_Fragment_b extends Fragment implements OnClickListener {
             new CustomToast().Show_Toast(getActivity(), view,
                     "Please enter Valid Aadhar Number.");
         else {
-//            Toast.makeText(getActivity(), "Do SignUp.", Toast.LENGTH_SHORT)
-//                    .show();
             BackgroundWorker_b backgroundWorker = new BackgroundWorker_b(getContext());
             backgroundWorker.execute(type, getFullName, getEmailId, getMobileNumber, getDob, getLocation, getIdentity, getPassword);
+            putJSON();
+            putJSON2();
         }
     }
 }

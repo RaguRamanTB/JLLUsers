@@ -45,4 +45,5 @@
     <string name="requests">REQUESTS</string>
     <string name="check_for_buy_requests">CHECK FOR BUY REQUESTS</string>
     <string name="locate">Locate</string>
+    <string name="office_branch_city">Office Branch (City)</string>
 </resources>

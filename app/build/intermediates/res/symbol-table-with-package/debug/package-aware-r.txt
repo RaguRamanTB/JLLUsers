@@ -1211,6 +1211,8 @@ id barrier
 id beginning
 id blocking
 id bottom
+id branch
+id branch_b
 id buttonPanel
 id buy
 id center
@@ -1275,6 +1277,7 @@ id light
 id line1
 id line3
 id listMode
+id listView
 id list_item
 id located
 id located_b
@@ -1377,6 +1380,7 @@ id standard
 id start
 id submenuarrow
 id submit_area
+id survey_no
 id tabMode
 id tag_transition_group
 id tag_unhandled_key_event_manager
@@ -1447,11 +1451,13 @@ layout activity_main
 layout activity_registrar
 layout activity_registrar__options
 layout activity_sell
+layout activity_selling__items
 layout activity_user
 layout activity_user__options
 layout activity_view__assets
 layout custom_toast
 layout forgotpassword_layout
+layout list_view
 layout login_layout
 layout login_layout_b
 layout notification_action
@@ -1566,6 +1572,7 @@ string location
 string login
 string mobileNumber
 string newUser
+string office_branch_city
 string password
 string place_autocomplete_clear_button
 string place_autocomplete_search_hint

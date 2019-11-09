@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentManager;
 import android.text.InputType;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -56,7 +57,6 @@ public class Login_Fragment extends Fragment implements OnClickListener {
         emailid = (EditText) view.findViewById(R.id.login_emailid);
         password = (EditText) view.findViewById(R.id.login_password);
         loginButton = (Button) view.findViewById(R.id.loginBtn);
-//        forgotPassword = (TextView) view.findViewById(R.id.forgot_password);
         signUp = (TextView) view.findViewById(R.id.createAccount);
         show_hide_password = (CheckBox) view
                 .findViewById(R.id.show_hide_password);

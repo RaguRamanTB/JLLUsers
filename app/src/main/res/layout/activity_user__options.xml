@@ -73,18 +73,6 @@
             android:textStyle="bold"
             android:onClick="goToSell"/>
 
-        <Button
-            android:id="@+id/viewMyAssets"
-            android:layout_width="270dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:background="@drawable/loginbutton_selector"
-            android:padding="3dp"
-            android:text="@string/view_my_assets"
-            android:textColor="#000000"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            android:onClick="goToView"/>
 
     </LinearLayout>
 

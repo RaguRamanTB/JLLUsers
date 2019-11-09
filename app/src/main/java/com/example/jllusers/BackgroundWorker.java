@@ -4,6 +4,9 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Bundle;
+import android.widget.Toast;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -28,8 +31,8 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
     @Override
     protected String doInBackground(String... voids) {
         String type = voids[0];
-        String login_url = "http://21822f0e.ngrok.io/login.php";
-        String register_url = "http://21822f0e.ngrok.io/register.php";
+        String login_url = "http://715863b8.ngrok.io/login.php";
+        String register_url = "http://715863b8.ngrok.io/register.php";
         if (type.equals("Login")) {
             try {
                 String getEmailId = voids[1];
@@ -61,7 +64,6 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
                 inputStream.close();
                 httpURLConnection.disconnect();
                 return result;
-
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -76,6 +78,7 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
                 String getLocation = voids[5];
                 String getIdentity = voids[6];
                 String getPassword = voids[7];
+
                 URL url = new URL(register_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -85,7 +88,7 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
 
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                String post_data = URLEncoder.encode("getFullName","UTF-8")+"="+URLEncoder.encode(getFullName,"UTF-8")+"&"
+                String post_data =URLEncoder.encode("getFullName","UTF-8")+"="+URLEncoder.encode(getFullName,"UTF-8")+"&"
                         +URLEncoder.encode("getEmailId","UTF-8")+"="+URLEncoder.encode(getEmailId,"UTF-8")+"&"
                         +URLEncoder.encode("getMobileNumber","UTF-8")+"="+URLEncoder.encode(getMobileNumber,"UTF-8")+"&"
                         +URLEncoder.encode("getDob","UTF-8")+"="+URLEncoder.encode(getDob,"UTF-8")+"&"
@@ -115,13 +118,14 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
                 e.printStackTrace();
             }
         }
+
         return null;
     }
 
     @Override
     protected void onPreExecute() {
         alertDialog = new AlertDialog.Builder(context).create();
-        alertDialog.setTitle("Login Status");
+        alertDialog.setTitle("Login/Registration Status");
     }
 
     @Override

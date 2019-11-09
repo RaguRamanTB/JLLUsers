@@ -1,5 +1,6 @@
 package com.example.jllusers;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
@@ -12,11 +13,11 @@ import android.content.res.ColorStateList;
 import android.content.res.XmlResourceParser;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import java.util.Random;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,16 +31,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.maps.model.LatLng;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.api.model.TypeFilter;
-import com.google.android.libraries.places.api.net.PlacesClient;
 import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.libraries.places.widget.AutocompleteActivity;
-import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
-import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
+import com.squareup.okhttp.Call;
+import com.squareup.okhttp.MediaType;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import static android.app.Activity.RESULT_CANCELED;
 import static android.app.Activity.RESULT_OK;
@@ -54,6 +60,15 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
     private static TextView login;
     private static Button signUpButton, locateButton;
     private static CheckBox terms_conditions;
+
+    private static String JSON = "";
+    private static String JS2 = "";
+
+    static int range = 999;
+    static Random ren = new Random();
+    static int randNum = ren.nextInt(range);
+    static String rm = Integer.toString(randNum);
+    static String getUserId = "U-"+rm;
 
 
     public SignUp_Fragment() {
@@ -183,7 +198,121 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
 
     }
 
-    // Check Validation Method
+    public void putJSON () {
+
+        String getFullName = fullName.getText().toString();
+        String getEmailId = emailId.getText().toString();
+        String getMobileNumber = mobileNumber.getText().toString();
+        String getDob = mdob.getText().toString();
+        String getLocation = location.getText().toString();
+        String getIdentity = identity.getText().toString();
+
+        final JSONObject upload = new JSONObject();
+        try {
+            upload.put("$class","org.jll.hack.Person");
+            upload.put("govt_id",getIdentity);
+            upload.put("name",getFullName);
+            upload.put("dob",getDob);
+            upload.put("email",getEmailId);
+            upload.put("phone_num",getMobileNumber);
+            upload.put("location",getLocation);
+            upload.put("city",getLocation);
+            JSON = upload.toString();
+            Log.e("TAG",JSON);
+            sendDataToServer(JSON);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void sendDataToServer(String json) {
+        final String JSON = json;
+        new AsyncTask<Void, Void, String>() {
+
+            @Override
+            protected String doInBackground(Void... voids) {
+                return getServerResponse(JSON);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+            }
+        }.execute();
+    }
+
+    private String getServerResponse(String json) {
+        final String BASE_URL = "https://7f45ac9d.ngrok.io/api/Person";
+        OkHttpClient okHttpClient = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url(BASE_URL)
+                .post(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json))
+                .build();
+
+        Call call = okHttpClient.newCall (request);
+        Response response = null;
+
+        try {
+            response = call.execute();
+            return response.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "Unable to contact server!";
+    }
+
+    public void putJSON2 (){
+        String getIdentity = identity.getText().toString();
+        String link = "org.jll.hack.Person#"+getIdentity;
+        final JSONObject upload2 = new JSONObject();
+        try {
+            upload2.put("$class","org.jll.hack.User");
+            upload2.put("user_id",getUserId);
+            upload2.put("person",link);
+            JS2 = upload2.toString();
+            Toast.makeText(getContext(),JS2,Toast.LENGTH_LONG).show();
+            Log.e("TAG",JS2);
+            sendDataToServer2(JS2);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void sendDataToServer2(String json) {
+        final String JSON = json;
+        new AsyncTask<Void, Void, String>() {
+
+            @Override
+            protected String doInBackground(Void... voids) {
+                return getServerResponse2(JSON);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+            }
+        }.execute();
+    }
+
+    private String getServerResponse2(String json) {
+        final String BASE_URL = "https://7f45ac9d.ngrok.io/api/User";
+        OkHttpClient okHttpClient = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url(BASE_URL)
+                .post(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json))
+                .build();
+
+        Call call = okHttpClient.newCall (request);
+        Response response = null;
+
+        try {
+            response = call.execute();
+            return response.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "Unable to contact server!";
+    }
+
+
     private void checkValidation() {
 
         String getFullName = fullName.getText().toString();
@@ -230,10 +359,10 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
                     "Please enter Valid Aadhar Number.");
 
         else {
-//            Toast.makeText(getActivity(), "Do SignUp.", Toast.LENGTH_SHORT)
-//                    .show();
             BackgroundWorker backgroundWorker = new BackgroundWorker(getContext());
             backgroundWorker.execute(type, getFullName, getEmailId, getMobileNumber, getDob, getLocation, getIdentity, getPassword);
+            putJSON();
+            putJSON2();
         }
     }
 }
