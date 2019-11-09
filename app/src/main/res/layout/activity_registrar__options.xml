@@ -57,7 +57,8 @@
             android:text="@string/asset_creation"
             android:textColor="#000000"
             android:textSize="17sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="AssetCreation"/>
 
         <Button
             android:id="@+id/a_modification"
@@ -69,7 +70,8 @@
             android:text="@string/asset_modification"
             android:textColor="#000000"
             android:textSize="17sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="AssetModification"/>
 
         <Button
             android:id="@+id/registration"
@@ -81,7 +83,8 @@
             android:text="@string/land_registration"
             android:textColor="#000000"
             android:textSize="17sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="Registration"/>
 
     </LinearLayout>
 

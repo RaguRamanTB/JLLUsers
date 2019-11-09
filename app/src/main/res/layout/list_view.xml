@@ -4,6 +4,7 @@
     android:textColor="@color/white"
     android:drawableLeft="@drawable/location"
     android:drawablePadding="8dp"
+    android:textSize="17sp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:textAppearance="?android:attr/textAppearanceListItemSmall"

@@ -46,4 +46,15 @@
     <string name="check_for_buy_requests">CHECK FOR BUY REQUESTS</string>
     <string name="locate">Locate</string>
     <string name="office_branch_city">Office Branch (City)</string>
+    <string name="asset_registration">ASSET REGISTRATION</string>
+    <string name="survey_number">Survey Number</string>
+    <string name="document_number">Document Number</string>
+    <string name="patta_number">Patta Number</string>
+    <string name="dimension">Dimension</string>
+    <string name="guideline_value">Guideline Value</string>
+    <string name="market_value">Market Value</string>
+    <string name="land_type">Land Type</string>
+    <string name="approval_type">Approval Type</string>
+    <string name="owner">Owner</string>
+    <string name="create_asset">CREATE ASSET</string>
 </resources>

@@ -29,6 +29,9 @@
         android:testOnly="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
+        <activity android:name="com.example.jllusers.AssetRegistration" />
+        <activity android:name="com.example.jllusers.AssetModification" />
+        <activity android:name="com.example.jllusers.AssetCreation" />
         <activity android:name="com.example.jllusers.Selling_Items" />
         <activity android:name="com.example.jllusers.View_Assets" />
         <activity android:name="com.example.jllusers.Sell" />
