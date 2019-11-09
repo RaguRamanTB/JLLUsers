@@ -13,7 +13,7 @@ public class Registrar_Options extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar__options);
-        Toast.makeText(this, "Login Successful!",Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Login Successful!",Toast.LENGTH_SHORT).show();
     }
 
     public void AssetCreation (View view) {
@@ -29,6 +29,7 @@ public class Registrar_Options extends AppCompatActivity {
     public void Registration (View view) {
         Intent i = new Intent(this, AssetRegistration.class);
         startActivity(i);
+        finish();
     }
 
 }

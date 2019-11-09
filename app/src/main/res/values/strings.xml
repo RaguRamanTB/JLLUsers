@@ -57,4 +57,21 @@
     <string name="approval_type">Approval Type</string>
     <string name="owner">Owner</string>
     <string name="create_asset">CREATE ASSET</string>
+    <string name="search">SEARCH</string>
+    <string name="modify_asset">MODIFY ASSET</string>
+    <string name="land_type_m">Land Type</string>
+    <string name="approval_type_m">Approval Type</string>
+    <string name="buyer_id">Buyer ID</string>
+    <string name="seller_id">Seller ID</string>
+    <string name="documents_required">DOCUMENTS REQUIRED</string>
+    <string name="parent_document">Parent Document</string>
+    <string name="patta">Patta</string>
+    <string name="encumbrance_certificate">Encumbrance Certificate</string>
+    <string name="register">REGISTER</string>
+    <string name="cancel">CANCEL</string>
+    <string name="enter_city">Enter City</string>
+    <string name="enter_survey_no">Enter Survey No.</string>
+    <string name="search_by_city">SEARCH BY CITY</string>
+    <string name="view_responses">VIEW RESPONSES</string>
+    <string name="search_by_survey_no">SEARCH BY SURVEY NO.</string>
 </resources>

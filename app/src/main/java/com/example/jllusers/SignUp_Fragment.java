@@ -269,7 +269,7 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
             upload2.put("user_id",getUserId);
             upload2.put("person",link);
             JS2 = upload2.toString();
-            Toast.makeText(getContext(),JS2,Toast.LENGTH_LONG).show();
+//            Toast.makeText(getContext(),JS2,Toast.LENGTH_LONG).show();
             Log.e("TAG",JS2);
             sendDataToServer2(JS2);
         } catch (JSONException e) {

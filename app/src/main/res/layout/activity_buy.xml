@@ -13,7 +13,7 @@
         android:src="@drawable/logo" />
 
     <LinearLayout
-        android:id="@+id/topLinear"
+        android:id="@+id/topLinear1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -42,7 +42,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/topLinear"
+        android:layout_below="@+id/topLinear1"
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:orientation="vertical">
@@ -69,26 +69,71 @@
             android:orientation="horizontal"
             android:gravity="center">
 
+            <EditText
+                android:id="@+id/enterCity"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/location"
+                android:drawableTint="@color/white"
+                android:layout_gravity="center_vertical"
+                android:drawablePadding="8dp"
+                android:hint="@string/enter_city"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16sp" />
+
+
+
             <Button
                 android:id="@+id/search_city"
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:background="@drawable/loginbutton_selector"
                 android:padding="3dp"
-                android:layout_margin="20dp"
+                android:layout_margin="10dp"
                 android:text="@string/city"
                 android:textColor="#000000"
                 android:textSize="17sp"
                 android:textStyle="bold" />
 
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+
+            <EditText
+                android:id="@+id/enterSurveyNo"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/quantum_ic_arrow_back_grey600_24"
+                android:drawableTint="@color/white"
+                android:drawablePadding="8dp"
+                android:hint="@string/enter_survey_no"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16sp" />
+
             <Button
                 android:id="@+id/search_survey"
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_margin="10dp"
                 android:background="@drawable/loginbutton_selector"
                 android:padding="3dp"
                 android:text="@string/survey_no"
