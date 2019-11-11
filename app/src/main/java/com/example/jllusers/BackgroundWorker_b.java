@@ -128,8 +128,11 @@ public class BackgroundWorker_b extends AsyncTask<String, Void, String> {
     protected void onPostExecute(String result) {
         alertDialog.setMessage(result);
         alertDialog.show();
-        if (result.equals("Login Success!")) {
+        String message = result.substring(0,14);
+        String id = result.substring(result.length() - 12);
+        if (message.equals("Login Success!")) {
             Intent i = new Intent(context,Registrar_Options.class);
+            i.putExtra("Aadhar",id);
             context.startActivity(i);
             alertDialog.hide();
         }

@@ -34,7 +34,9 @@ public class AssetRegistration extends AppCompatActivity implements View.OnClick
     public static CheckBox parentDoc, pattaDoc, encumDoc, mapDoc, approvalDoc;
     public static Button register, cancel, searchDocNo;
 
-    public static String buyID, getMValue="", getOwner="", id="", isForSale="", getPNo, getDim, getGValue, getALoc, lType, aType;
+    private static String aadhar;
+
+    public static String sellID, buyID, getMValue="", getOwner="", id="", isForSale="", getPNo, getDim, getGValue, getALoc, lType, aType;
 
     public static boolean onSale = true;
 
@@ -43,7 +45,8 @@ public class AssetRegistration extends AppCompatActivity implements View.OnClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_asset_registration);
-
+        Intent i = getIntent();
+        aadhar = i.getStringExtra("Aadhar");
         initViews();
         setListeners();
     }
@@ -111,22 +114,23 @@ public class AssetRegistration extends AppCompatActivity implements View.OnClick
         } else {
             documentNo = docNo.getText().toString();
             buyID = buyerID.getText().toString();
-            String postOwner = "org.jll.hack.User#"+buyID;
+            sellID = sellerID.getText().toString();
+            getMValue = mValue.getText().toString();
+            String postLand = "org.jll.hack.Land#"+surveyNo;
+            String postBuyer = "org.jll.hack.User#"+buyID;
+            String postSeller = "org.jll.hack.User#"+sellID;
+            String postRegistrar = "org.jll.hack.Registrar#"+aadhar;
+
+            Toast.makeText(this,postBuyer,Toast.LENGTH_LONG).show();
 
             final JSONObject upload = new JSONObject();
             try {
-                upload.put("$class","org.jll.hack.Land");
-                upload.put("survey_no",surveyNo);
-                upload.put("document_no",documentNo);
-                upload.put("patta_no",getPNo);
-                upload.put("dimension",getDim);
-                upload.put("guideline_value",getGValue);
-                upload.put("market_value",getMValue);
-                upload.put("land_type",lType);
-                upload.put("approval_type",aType);
-                upload.put("owner",postOwner);
-                upload.put("location",getALoc);
-                upload.put("forsale","no");
+                upload.put("$class","org.jll.hack.Buy");
+                upload.put("land",postLand);
+                upload.put("buyer",postBuyer);
+                upload.put("seller",postSeller);
+                upload.put("registrar",postRegistrar);
+                upload.put("transaction_amount",getMValue);
                 String JSON = upload.toString();
                 Log.e("TAG", JSON);
                 sendDataToServer(JSON);
@@ -153,12 +157,11 @@ public class AssetRegistration extends AppCompatActivity implements View.OnClick
     }
 
     private String getServerResponse(String json) {
-        final String BASE_URL = "https://7f45ac9d.ngrok.io/api/Land/";
-        final String finalURL = BASE_URL+surveyNo;
+        final String BASE_URL = "https://7f45ac9d.ngrok.io/api/Buy";
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder()
-                .url(finalURL)
-                .put(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json))
+                .url(BASE_URL)
+                .post(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json))
                 .build();
 
         Call call = okHttpClient.newCall (request);
@@ -221,7 +224,7 @@ public class AssetRegistration extends AppCompatActivity implements View.OnClick
                     }
                     sellerID.setText(id);
                     mValue.setText(getMValue);
-                    if (isForSale.equals("yes")) {
+                    if (isForSale.equals("yes") || isForSale.equals("YES") || isForSale.equals("Yes")) {
                         onSale=true;
                     } else {
                         onSale=false;

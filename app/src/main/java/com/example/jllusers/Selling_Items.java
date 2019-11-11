@@ -198,32 +198,16 @@ public class Selling_Items extends AppCompatActivity implements View.OnClickList
 
     private void putForSale() {
         String getSNo = sur.getText().toString();
-        String getDNo = doc.getText().toString();
-        String getPNo = pat.getText().toString();
-        String getDim = dim.getText().toString();
-        String getGValue = gVal.getText().toString();
-        String getMValue = mVal.getText().toString();
-        String getLType = lType.getText().toString();
-        String getAType = aType.getText().toString();
         String getOwner = own.getText().toString();
-        String getALoc = loc.getText().toString();
 
         String postOwner = "org.jll.hack.User#"+getOwner;
+        String postLand = "org.jll.hack.Land#"+getSNo;
 
         final JSONObject upload = new JSONObject();
         try {
-            upload.put("$class","org.jll.hack.Land");
-            upload.put("survey_no",getSNo);
-            upload.put("document_no",getDNo);
-            upload.put("patta_no",getPNo);
-            upload.put("dimension",getDim);
-            upload.put("guideline_value",getGValue);
-            upload.put("market_value",getMValue);
-            upload.put("land_type",getLType);
-            upload.put("approval_type",getAType);
-            upload.put("owner",postOwner);
-            upload.put("location",getALoc);
-            upload.put("forsale","yes");
+            upload.put("$class","org.jll.hack.Register_for_sale");
+            upload.put("seller",postOwner);
+            upload.put("land",postLand);
             String JSON = upload.toString();
             Log.e("TAG", JSON);
             sendDataToServer(JSON);
@@ -238,13 +222,13 @@ public class Selling_Items extends AppCompatActivity implements View.OnClickList
 
             @Override
             protected String doInBackground(Void... voids) {
-                return getServerResponse(JSON);
+                return getServerResponse2(JSON);
             }
 
             @Override
             protected void onPostExecute(String s) {
                 Toast.makeText(Selling_Items.this,"Land Set For Registration",Toast.LENGTH_LONG).show();
-                forsale.setText("yes");
+                forsale.setText("YES");
             }
         }.execute();
     }
@@ -257,6 +241,26 @@ public class Selling_Items extends AppCompatActivity implements View.OnClickList
         Request request = new Request.Builder()
                 .url(finalURL)
                 .put(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json))
+                .build();
+
+        Call call = okHttpClient.newCall (request);
+        Response response = null;
+
+        try {
+            response = call.execute();
+            return response.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "Unable to contact server!";
+    }
+
+    private String getServerResponse2(String json) {
+        final String BASE_URL = "https://7f45ac9d.ngrok.io/api/Register_for_sale";
+        OkHttpClient okHttpClient = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url(BASE_URL)
+                .post(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json))
                 .build();
 
         Call call = okHttpClient.newCall (request);
