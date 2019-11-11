@@ -31,6 +31,7 @@ public class BackgroundNotification extends AsyncTask<String, Void, String> {
     protected String doInBackground(String... voids) {
         String type = voids[0];
         String notification_url = "http://715863b8.ngrok.io/notify_seller.php";
+        String update_notification = "http://715863b8.ngrok.io/update_notify.php";
         if (type.equals("BuyerNotification")) {
             try {
                 String getSNo = voids[1];
@@ -51,6 +52,43 @@ public class BackgroundNotification extends AsyncTask<String, Void, String> {
                         +URLEncoder.encode("getBuyerID","UTF-8")+"="+URLEncoder.encode(getBuyerID,"UTF-8")+"&"
                         +URLEncoder.encode("id","UTF-8")+"="+URLEncoder.encode(getSellerID,"UTF-8")+"&"
                         +URLEncoder.encode("getNotification","UTF-8")+"="+URLEncoder.encode(getNotification,"UTF-8");
+                bufferedWriter.write(post_data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();
+
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
+                String result="";
+                String line="";
+                while ((line = bufferedReader.readLine())!=null) {
+                    result += line;
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                return result;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else if (type.equals("UpdateNotification")) {
+            try {
+                String getSNo = voids[1];
+                String getBuyer = voids[2];
+                String notify = voids[3];
+                URL url = new URL(update_notification);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setDoInput(true);
+
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+                String post_data = URLEncoder.encode("survey_no","UTF-8")+"="+URLEncoder.encode(getSNo,"UTF-8")+"&"
+                        +URLEncoder.encode("buyerID","UTF-8")+"="+URLEncoder.encode(getBuyer,"UTF-8")+"&"
+                        +URLEncoder.encode("notified","UTF-8")+"="+URLEncoder.encode(notify,"UTF-8");
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
                 bufferedWriter.close();

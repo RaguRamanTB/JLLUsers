@@ -1231,6 +1231,7 @@ id center
 id center_horizontal
 id center_vertical
 id chains
+id checkRequests
 id checkbox
 id chronometer
 id cityList
@@ -1399,6 +1400,7 @@ id regForSale
 id register
 id registered_emailid
 id registration
+id requestList
 id responseList
 id revertSale
 id right
@@ -1533,6 +1535,7 @@ layout activity_registrar__options
 layout activity_search_city
 layout activity_sell
 layout activity_selling__items
+layout activity_update_notification
 layout activity_user
 layout activity_user__options
 layout activity_view__assets
@@ -1716,6 +1719,7 @@ string terms_conditions
 string user
 string user_options
 string view_my_assets
+string view_requests
 string view_response_for_requests
 string view_responses
 style AlertDialog_AppCompat

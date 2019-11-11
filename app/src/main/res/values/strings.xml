@@ -78,4 +78,5 @@
     <string name="for_sale_5">For Sale</string>
     <string name="revert_land_sale">REVERT LAND SALE</string>
     <string name="buy_request">BUY REQUEST</string>
+    <string name="view_requests">VIEW REQUESTS</string>
 </resources>

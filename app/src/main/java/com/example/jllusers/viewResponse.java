@@ -2,6 +2,7 @@ package com.example.jllusers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -28,11 +29,14 @@ public class viewResponse extends AppCompatActivity {
     private static ArrayList<String> arrayList = new ArrayList<>();
     private static ArrayList<String> notificationList = new ArrayList<>();
     AlertDialog alertDialog;
+    public static String aadhar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_response);
+        Intent i = getIntent();
+        aadhar = i.getStringExtra("Aadhar");
         listView = (ListView) findViewById(R.id.responseList);
         arrayAdapter = new ArrayAdapter(this,R.layout.list_view,arrayList);
 
@@ -70,12 +74,17 @@ public class viewResponse extends AppCompatActivity {
                 try {
                     JSONArray jsonArray = new JSONArray(myResponse);
                     JSONObject jsonObject;
+                    arrayList.clear();
+                    notificationList.clear();
                     for(int i=0; i<jsonArray.length();i++) {
                         jsonObject = jsonArray.getJSONObject(i);
                         String survey_no = jsonObject.optString("survey");
+                        String buyer = jsonObject.optString("buyer");
                         String notification = jsonObject.optString("notify");
-                        arrayList.add(survey_no);
-                        notificationList.add(notification);
+                        if (buyer.equals(aadhar)) {
+                            arrayList.add(survey_no);
+                            notificationList.add(notification);
+                        }
                     }
 
                     listView.setAdapter(arrayAdapter);

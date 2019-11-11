@@ -136,6 +136,7 @@ public class Buy extends AppCompatActivity implements View.OnClickListener {
 
     private void responseView() {
         Intent i = new Intent(this, com.example.jllusers.viewResponse.class);
+        i.putExtra("Aadhar",aadhar);
         startActivity(i);
     }
 }

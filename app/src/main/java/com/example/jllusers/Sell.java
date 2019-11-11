@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,10 +27,12 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Sell extends AppCompatActivity {
+public class Sell extends AppCompatActivity implements View.OnClickListener{
 
     private static ListView listView;
     private static ArrayAdapter arrayAdapter;
+
+    public static Button viewMyAssets, viewRequests;
 
     private static String aadhar;
 
@@ -40,6 +43,10 @@ public class Sell extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sell);
 
+        viewMyAssets = findViewById(R.id.viewMyAssets);
+        viewRequests = findViewById(R.id.checkRequests);
+        setListeners();
+
         Intent i = getIntent();
         aadhar = i.getStringExtra("Aadhar");
 
@@ -48,7 +55,12 @@ public class Sell extends AppCompatActivity {
         arrayAdapter = new ArrayAdapter(this,R.layout.list_view,arrayList);
     }
 
-    public void ViewAssets(View view) {
+    private void setListeners() {
+        viewMyAssets.setOnClickListener(this);
+        viewRequests.setOnClickListener(this);
+    }
+
+    public void ViewAssets() {
         String BASE_URL = "https://7f45ac9d.ngrok.io/api/Land?filter=%7B\"where\"%20%3A%20%7B\"owner\"%3A%20\"resource%3Aorg.jll.hack.User%23";
         String END_URL = "\"%7D%7D";
         final String urlFinal = BASE_URL+aadhar+END_URL;
@@ -105,5 +117,25 @@ public class Sell extends AppCompatActivity {
             }
         }.execute();
 
+    }
+
+    public void CheckRequests () {
+        Intent intent = new Intent(this,View_Assets.class);
+        intent.putExtra("Aadhar",aadhar);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.viewMyAssets:
+                ViewAssets();
+                break;
+
+            case R.id.checkRequests:
+                CheckRequests();
+                break;
+
+        }
     }
 }
