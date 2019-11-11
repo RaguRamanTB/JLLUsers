@@ -8,20 +8,26 @@ import android.widget.Toast;
 
 public class User_Options extends AppCompatActivity {
 
+    private static String aadhar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user__options);
-        Toast.makeText(this, "Login Successful!",Toast.LENGTH_SHORT).show();
+        Intent i = getIntent();
+        aadhar = i.getStringExtra("Aadhar");
+        Toast.makeText(this, "Login Successful!",Toast.LENGTH_LONG).show();
     }
 
     public void goToBuy (View view) {
         Intent intent = new Intent(this, Buy.class);
+        intent.putExtra("Aadhar",aadhar);
         startActivity(intent);
     }
 
     public void goToSell (View view) {
         Intent intent = new Intent(this, Sell.class);
+        intent.putExtra("Aadhar",aadhar);
         startActivity(intent);
     }
 

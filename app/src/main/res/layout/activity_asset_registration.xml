@@ -36,22 +36,45 @@
             android:layout_marginTop="10dp"
             android:background="@color/white" />
 
-        <EditText
-            android:id="@+id/dno_r"
-            android:layout_width="fill_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/quantum_ic_arrow_back_grey600_24"
-            android:drawableTint="@color/white"
-            android:drawablePadding="8dp"
-            android:gravity="center_vertical"
-            android:hint="@string/document_number"
-            android:padding="10dp"
-            android:singleLine="true"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="16sp" />
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/dno_r"
+                android:layout_width="236dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/quantum_ic_arrow_back_grey600_24"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/white"
+                android:gravity="center_vertical"
+                android:hint="@string/document_number"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/searchDocNo"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/loginbutton_selector"
+                android:drawableStart="@drawable/places_ic_search"
+                android:drawableTint="@color/black"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="@string/search"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
         <View
             android:layout_width="fill_parent"

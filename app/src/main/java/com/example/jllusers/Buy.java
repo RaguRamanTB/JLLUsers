@@ -13,11 +13,15 @@ public class Buy extends AppCompatActivity implements View.OnClickListener {
 
     public static EditText enterCity, enterSurveyNo;
     public static Button getCity, getSurveyNo, viewResponse;
+    private static String aadhar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy);
+
+        Intent i = getIntent();
+        aadhar = i.getStringExtra("Aadhar");
 
         enterCity = findViewById(R.id.enterCity);
         enterSurveyNo = findViewById(R.id.enterSurveyNo);

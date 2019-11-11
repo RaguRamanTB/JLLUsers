@@ -3,7 +3,9 @@ package com.example.jllusers;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,7 +21,18 @@ import com.google.android.libraries.places.api.model.TypeFilter;
 import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.libraries.places.widget.AutocompleteActivity;
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
+import com.squareup.okhttp.Call;
+import com.squareup.okhttp.MediaType;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -33,6 +46,8 @@ public class AssetModification extends AppCompatActivity implements AdapterView.
     public static EditText SurNo, Dimension, gValue, mValue;
     public static TextView aLoc,DocNo, PatNo, owner;
     public static Button modifyAsset, assetLoc, searchSurveyNo;
+
+    public static String surveyNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,18 +107,147 @@ public class AssetModification extends AppCompatActivity implements AdapterView.
                 break;
 
             case R.id.searchSurveyNo:
-//                Search By Survey Number
                 searchAssets();
                 break;
         }
     }
 
     private void searchAssets() {
+        surveyNo = SurNo.getText().toString();
+//        String BASE_URL = "https://7f45ac9d.ngrok.io/api/Land?filter=%7B\"where\"%3A%7B\"survey_no\"%3A\"";
+//        String END_URL = "\"%7D%7D";
+//        String urlFinal = BASE_URL+surveyNo+END_URL;
+//        Toast.makeText(AssetModification.this,urlFinal,Toast.LENGTH_LONG).show();
+        AsyncTask asyncTask = new AsyncTask() {
+            @Override
+            protected Object doInBackground(Object[] objects) {
+                OkHttpClient client = new OkHttpClient();
+//                String BASE_URL = "https://7f45ac9d.ngrok.io/api/Land?filter=%7B\"where\"%3A%7B\"survey_no\"%3A\"";
+//                String END_URL = "\"%7D%7D";
+//                String urlFinal = BASE_URL+surveyNo+END_URL;
+                String BASE_URL = "https://7f45ac9d.ngrok.io/api/Land/";
+                String urlFinal = BASE_URL+surveyNo;
+                Request request = new Request.Builder()
+                        .url(urlFinal)
+                        .build();
 
+                Response response = null;
+
+                try {
+                    response = client.newCall(request).execute();
+                    return response.body().string();
+                }catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Object o) {
+                String myResponse = o.toString();
+                try {
+//                    JSONArray jsonArray = new JSONArray(myResponse);
+                    JSONObject jsonObject = new JSONObject(myResponse);
+                    String getDNo="", getPNo="", getDim="", getGValue="", getMValue="", getOwner="", id="", getALoc="";
+//                    for(int i=0; i<jsonArray.length();i++) {
+//                        jsonObject = jsonArray.getJSONObject(i);
+                        getDNo = jsonObject.optString("document_no");
+                        getPNo = jsonObject.optString("patta_no");
+                        getDim = jsonObject.optString("dimension");
+                        getGValue = jsonObject.optString("guideline_value");
+                        getMValue = jsonObject.optString("market_value");
+                        getOwner = jsonObject.optString("owner");
+                        id = getOwner.substring(getOwner.length() - 12);
+                        getALoc = jsonObject.optString("location");
+
+//                    }
+                    DocNo.setText(getDNo);
+                    PatNo.setText(getPNo);
+                    Dimension.setText(getDim);
+                    gValue.setText(getGValue);
+                    mValue.setText(getMValue);
+                    owner.setText(id);
+                    aLoc.setText(getALoc);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }.execute();
     }
 
     private void putJSON() {
+        String getSNo = SurNo.getText().toString();
+        String getDNo = DocNo.getText().toString();
+        String getPNo = PatNo.getText().toString();
+        String getDim = Dimension.getText().toString();
+        String getGValue = gValue.getText().toString();
+        String getMValue = mValue.getText().toString();
+        String getOwner = owner.getText().toString();
+        String getALoc = aLoc.getText().toString();
 
+        String postOwner = "org.jll.hack.User#"+getOwner;
+
+        final JSONObject upload = new JSONObject();
+        try {
+            upload.put("$class","org.jll.hack.Land");
+            upload.put("survey_no",getSNo);
+            upload.put("document_no",getDNo);
+            upload.put("patta_no",getPNo);
+            upload.put("dimension",getDim);
+            upload.put("guideline_value",getGValue);
+            upload.put("market_value",getMValue);
+            upload.put("land_type",lType);
+            upload.put("approval_type",aType);
+            upload.put("owner",postOwner);
+            upload.put("location",getALoc);
+            upload.put("forsale","no");
+            String JSON = upload.toString();
+            Log.e("TAG", JSON);
+            sendDataToServer(JSON);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void sendDataToServer(String json) {
+        final String JSON = json;
+        new AsyncTask<Void, Void, String>() {
+
+            @Override
+            protected String doInBackground(Void... voids) {
+                return getServerResponse(JSON);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                Toast.makeText(AssetModification.this,"Asset Modified Successfully!",Toast.LENGTH_LONG).show();
+            }
+        }.execute();
+    }
+
+    private String getServerResponse(String json) {
+        surveyNo = SurNo.getText().toString();
+        final String BASE_URL = "https://7f45ac9d.ngrok.io/api/Land/";
+        final String finalURL = BASE_URL+surveyNo;
+//        Toast.makeText(this,finalURL,Toast.LENGTH_LONG).show();
+        OkHttpClient okHttpClient = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url(finalURL)
+                .put(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json))
+                .build();
+
+        Call call = okHttpClient.newCall (request);
+        Response response = null;
+
+        try {
+            response = call.execute();
+            return response.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "Unable to contact server!";
     }
 
     @Override

@@ -30,12 +30,18 @@ public class Sell extends AppCompatActivity {
 
     private static ListView listView;
     private static ArrayAdapter arrayAdapter;
+
+    private static String aadhar;
+
     private static ArrayList<String> arrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sell);
+
+        Intent i = getIntent();
+        aadhar = i.getStringExtra("Aadhar");
 
         listView = (ListView) findViewById(R.id.listView);
 

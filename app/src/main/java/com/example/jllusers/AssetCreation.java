@@ -3,7 +3,9 @@ package com.example.jllusers;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,7 +21,17 @@ import com.google.android.libraries.places.api.model.TypeFilter;
 import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.libraries.places.widget.AutocompleteActivity;
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
+import com.squareup.okhttp.Call;
+import com.squareup.okhttp.MediaType;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -33,6 +45,8 @@ public class AssetCreation extends AppCompatActivity implements AdapterView.OnIt
     public static EditText SurNo,DocNo, PatNo, Dimension, gValue, mValue, owner;
     public static TextView aLoc;
     public static Button createAsset, assetLoc;
+
+    private static String JSON = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -156,7 +170,77 @@ public class AssetCreation extends AppCompatActivity implements AdapterView.OnIt
             Toast.makeText(this,"All fields are required! Fill everything.",Toast.LENGTH_LONG).show();
         }
         else {
-
+            putJSON();
         }
+    }
+
+    private void putJSON() {
+        String getSNo = SurNo.getText().toString();
+        String getDNo = DocNo.getText().toString();
+        String getPNo = PatNo.getText().toString();
+        String getDim = Dimension.getText().toString();
+        String getGValue = gValue.getText().toString();
+        String getMValue = mValue.getText().toString();
+        String getOwner = owner.getText().toString();
+        String getALoc = aLoc.getText().toString();
+
+        String postOwner = "org.jll.hack.User#"+getOwner;
+
+        final JSONObject upload = new JSONObject();
+        try {
+            upload.put("$class","org.jll.hack.Land");
+            upload.put("survey_no",getSNo);
+            upload.put("document_no",getDNo);
+            upload.put("patta_no",getPNo);
+            upload.put("dimension",getDim);
+            upload.put("guideline_value",getGValue);
+            upload.put("market_value",getMValue);
+            upload.put("land_type",lType);
+            upload.put("approval_type",aType);
+            upload.put("owner",postOwner);
+            upload.put("location",getALoc);
+            upload.put("forsale","no");
+            JSON = upload.toString();
+            Log.e("TAG",JSON);
+            sendDataToServer(JSON);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void sendDataToServer(String json) {
+        final String JSON = json;
+        new AsyncTask<Void, Void, String>() {
+
+            @Override
+            protected String doInBackground(Void... voids) {
+                return getServerResponse(JSON);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                Toast.makeText(AssetCreation.this,"Asset created Successfully!",Toast.LENGTH_LONG).show();
+            }
+        }.execute();
+    }
+
+    private String getServerResponse(String json) {
+        final String BASE_URL = "https://7f45ac9d.ngrok.io/api/Land";
+        OkHttpClient okHttpClient = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url(BASE_URL)
+                .post(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json))
+                .build();
+
+        Call call = okHttpClient.newCall (request);
+        Response response = null;
+
+        try {
+            response = call.execute();
+            return response.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "Unable to contact server!";
     }
 }
