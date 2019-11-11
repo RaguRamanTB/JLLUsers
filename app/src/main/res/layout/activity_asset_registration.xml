@@ -12,6 +12,9 @@
         android:padding="7dp"
         android:src="@drawable/logo" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -56,7 +59,6 @@
                 android:padding="10dp"
                 android:singleLine="true"
                 android:textColor="@color/white"
-                android:textColorHint="@color/white"
                 android:textSize="16sp" />
 
             <Button
@@ -81,49 +83,96 @@
             android:layout_height="1px"
             android:background="@color/white_greyish" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="180dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:hint="Buyer ID : "
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16sp" />
         <EditText
             android:id="@+id/buyerID"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/quantum_ic_arrow_back_grey600_24"
-            android:drawableTint="@color/white"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="@string/buyer_id"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
             android:textSize="16sp" />
-
+        </LinearLayout>
         <View
             android:layout_width="fill_parent"
             android:layout_height="1px"
             android:background="@color/white_greyish" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="180dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:hint="Seller ID : "
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16sp" />
         <EditText
             android:id="@+id/sellerID"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/quantum_ic_arrow_back_grey600_24"
-            android:drawableTint="@color/white"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="@string/seller_id"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
             android:textSize="16sp" />
-
+        </LinearLayout>
         <View
             android:layout_width="fill_parent"
             android:layout_height="1px"
             android:background="@color/white_greyish" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:hint="Buyer ID : "
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/mValue_r"
@@ -131,17 +180,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/quantum_ic_arrow_back_grey600_24"
-            android:drawableTint="@color/white"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="@string/market_value"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
             android:textSize="16sp" />
-
+        </LinearLayout>
         <View
             android:layout_width="fill_parent"
             android:layout_height="1px"
@@ -244,4 +290,5 @@
         </LinearLayout>
 
     </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

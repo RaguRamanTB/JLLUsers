@@ -1434,6 +1434,13 @@ id terms_conditions_b
 id terrain
 id text
 id text2
+id textDim
+id textDno
+id textGV
+id textMV
+id textOwner
+id textPno
+id textSno
 id textSpacerNoButtons
 id textSpacerNoTitle
 id time

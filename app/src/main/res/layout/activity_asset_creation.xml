@@ -48,27 +48,63 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/sno"
-            android:layout_width="fill_parent"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/quantum_ic_arrow_back_grey600_24"
-            android:drawableTint="@color/white"
-            android:drawablePadding="8dp"
-            android:gravity="center_vertical"
-            android:hint="@string/survey_number"
-            android:padding="10dp"
-            android:singleLine="true"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="16sp"/>
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textSno"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:hint="Survey Number : "
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/sno"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:hint="@string/survey_number"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="1px"
             android:background="@color/white_greyish" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textDno"
+                android:layout_width="180dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:hint="Document Number : "
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16sp" />
 
         <EditText
             android:id="@+id/dno"
@@ -76,21 +112,38 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/quantum_ic_arrow_back_grey600_24"
-            android:drawableTint="@color/white"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="@string/document_number"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
             android:textSize="16sp" />
+        </LinearLayout>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="1px"
             android:background="@color/white_greyish" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textPno"
+                android:layout_width="180dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:hint="Patta Number : "
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16sp" />
 
         <EditText
             android:id="@+id/pno"
@@ -98,65 +151,114 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/quantum_ic_arrow_back_grey600_24"
-            android:drawableTint="@color/white"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="@string/patta_number"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
             android:textSize="16sp" />
+        </LinearLayout>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="1px"
             android:background="@color/white_greyish" />
 
-        <EditText
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textDim"
+                android:layout_width="180dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:hint="Dimension : "
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16sp" />
+
+
+            <EditText
             android:id="@+id/dimension"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/quantum_ic_arrow_back_grey600_24"
-            android:drawableTint="@color/white"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="@string/dimension"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
             android:textSize="16sp" />
-
+        </LinearLayout>
         <View
             android:layout_width="fill_parent"
             android:layout_height="1px"
             android:background="@color/white_greyish" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textGV"
+                android:layout_width="180dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:hint="Guideline Value : "
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16sp" />
         <EditText
             android:id="@+id/gValue"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/quantum_ic_arrow_back_grey600_24"
-            android:drawableTint="@color/white"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="@string/guideline_value"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
             android:textSize="16sp"/>
-
+        </LinearLayout>
         <View
             android:layout_width="fill_parent"
             android:layout_height="1px"
             android:background="@color/white_greyish" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textMV"
+                android:layout_width="180dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:hint="Market Value : "
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16sp" />
 
         <EditText
             android:id="@+id/mValue"
@@ -164,17 +266,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/quantum_ic_arrow_back_grey600_24"
-            android:drawableTint="@color/white"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="@string/market_value"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
             android:textSize="16sp" />
-
+        </LinearLayout>
         <View
             android:layout_width="fill_parent"
             android:layout_height="1px"
@@ -237,30 +336,45 @@
             android:layout_height="1px"
             android:background="@color/white_greyish" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textOwner"
+                android:layout_width="180dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:hint="Owner : "
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16sp" />
         <EditText
             android:id="@+id/owner"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/quantum_ic_arrow_back_grey600_24"
-            android:drawableTint="@color/white"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="@string/owner"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
             android:textSize="16sp" />
-
+        </LinearLayout>
         <View
             android:layout_width="fill_parent"
             android:layout_height="1px"
             android:background="@color/white_greyish" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
@@ -278,13 +392,13 @@
                 android:padding="10dp"
                 android:singleLine="true"
                 android:textColor="@color/white"
-                android:textColorHint="@color/white"
                 android:textSize="16sp" />
 
             <Button
                 android:id="@+id/assetLoc"
                 android:layout_width="128dp"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
                 android:layout_margin="5dp"
                 android:background="@drawable/loginbutton_selector"
                 android:drawableStart="@drawable/places_ic_search"
@@ -296,7 +410,7 @@
                 android:textSize="12sp"
                 android:textStyle="bold"/>
 
-        </LinearLayout>
+        </RelativeLayout>
 
 
         <Button
