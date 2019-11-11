@@ -114,10 +114,6 @@ public class AssetModification extends AppCompatActivity implements AdapterView.
 
     private void searchAssets() {
         surveyNo = SurNo.getText().toString();
-//        String BASE_URL = "https://7f45ac9d.ngrok.io/api/Land?filter=%7B\"where\"%3A%7B\"survey_no\"%3A\"";
-//        String END_URL = "\"%7D%7D";
-//        String urlFinal = BASE_URL+surveyNo+END_URL;
-//        Toast.makeText(AssetModification.this,urlFinal,Toast.LENGTH_LONG).show();
         AsyncTask asyncTask = new AsyncTask() {
             @Override
             protected Object doInBackground(Object[] objects) {
