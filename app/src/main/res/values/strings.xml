@@ -74,4 +74,7 @@
     <string name="search_by_city">SEARCH BY CITY</string>
     <string name="view_responses">VIEW RESPONSES</string>
     <string name="search_by_survey_no">SEARCH BY SURVEY NO.</string>
+    <string name="register_for_sale">REGISTER FOR SALE</string>
+    <string name="for_sale_5">For Sale</string>
+    <string name="revert_land_sale">REVERT LAND SALE</string>
 </resources>

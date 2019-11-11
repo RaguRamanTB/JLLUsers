@@ -1177,6 +1177,7 @@ id SYM
 id Seller
 id aLoc
 id aLoc_m
+id aType
 id a_creation
 id a_modification
 id action_bar
@@ -1230,7 +1231,6 @@ id center_vertical
 id chains
 id checkbox
 id chronometer
-id city
 id clip_horizontal
 id clip_vertical
 id close_activity
@@ -1248,6 +1248,7 @@ id customPanel
 id dark
 id decor_content_parent
 id default_activity_button
+id dim
 id dimension
 id dimension_m
 id dimensions
@@ -1257,6 +1258,7 @@ id dno
 id dno_m
 id dno_r
 id dob
+id doc
 id edit_query
 id encumDoc
 id end
@@ -1269,11 +1271,13 @@ id fill_horizontal
 id fill_vertical
 id forever
 id forgot_button
+id forsale
 id frameContainer
 id frameContainer1
 id frameContainer_b
 id fullName
 id fullName_b
+id gVal
 id gValue
 id gValue_m
 id gone
@@ -1294,6 +1298,7 @@ id info
 id invisible
 id italic
 id item_touch_helper_previous_elevation
+id lType
 id landSpinner
 id landSpinner_m
 id landType
@@ -1305,6 +1310,7 @@ id line3
 id listMode
 id listView
 id list_item
+id loc
 id located
 id located_b
 id location
@@ -1317,6 +1323,7 @@ id login_layout
 id login_layout_b
 id login_password
 id login_password_b
+id mVal
 id mValue
 id mValue_m
 id mValue_r
@@ -1333,6 +1340,7 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id own
 id owner
 id owner_m
 id packed
@@ -1341,6 +1349,7 @@ id parentDoc
 id parentPanel
 id password
 id password_b
+id pat
 id pattaDoc
 id percent
 id place_autocomplete_clear_button
@@ -1374,9 +1383,11 @@ id pno_m
 id progress_circular
 id progress_horizontal
 id radio
+id regForSale
 id register
 id registered_emailid
 id registration
+id revertSale
 id right
 id right_icon
 id right_side
@@ -1423,8 +1434,8 @@ id standard
 id start
 id submenuarrow
 id submit_area
+id sur
 id survey
-id survey_no
 id tabMode
 id tag_transition_group
 id tag_unhandled_key_event_manager
@@ -1632,6 +1643,7 @@ string email
 string encumbrance_certificate
 string enter_city
 string enter_survey_no
+string for_sale_5
 string forgot
 string fullName
 string guideline_value
@@ -1664,10 +1676,12 @@ string places_powered_by_google
 string places_search_error
 string places_try_again
 string register
+string register_for_sale
 string registered_emailid
 string registrar
 string registrar_options
 string requests
+string revert_land_sale
 string search
 string search_by
 string search_by_city

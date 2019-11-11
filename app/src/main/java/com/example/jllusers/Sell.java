@@ -49,7 +49,10 @@ public class Sell extends AppCompatActivity {
     }
 
     public void ViewAssets(View view) {
-        final String urlFinal = "https://7f45ac9d.ngrok.io/api/Land";
+        String BASE_URL = "https://7f45ac9d.ngrok.io/api/Land?filter=%7B\"where\"%20%3A%20%7B\"owner\"%3A%20\"resource%3Aorg.jll.hack.User%23";
+        String END_URL = "\"%7D%7D";
+        final String urlFinal = BASE_URL+aadhar+END_URL;
+        arrayList.clear();
         AsyncTask asyncTask = new AsyncTask() {
             @Override
             protected Object doInBackground(Object[] objects) {
@@ -76,15 +79,10 @@ public class Sell extends AppCompatActivity {
                 try {
                     JSONArray jsonArray = new JSONArray(myResponse);
                     JSONObject jsonObject;
-//                    String data = "";
                     for(int i=0; i<jsonArray.length();i++) {
                         jsonObject = jsonArray.getJSONObject(i);
                         String survey_no = jsonObject.optString("survey_no");
-//                        String document_no = jsonObject.optString("document_no");
-//                        String patta_no = jsonObject.optString("patta_no");
                         arrayList.add(survey_no);
-//                        arrayList.add(document_no);
-//                        data += "\nSurvey No  :  "+survey_no+"\nDocument_ID  :  "+document_no+"\npatta No  :  "+patta_no+"\n\n";
                     }
 
                     listView.setAdapter(arrayAdapter);

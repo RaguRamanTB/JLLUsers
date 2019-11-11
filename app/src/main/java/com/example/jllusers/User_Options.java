@@ -16,7 +16,7 @@ public class User_Options extends AppCompatActivity {
         setContentView(R.layout.activity_user__options);
         Intent i = getIntent();
         aadhar = i.getStringExtra("Aadhar");
-        Toast.makeText(this, "Login Successful!",Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, "Login Successful!",Toast.LENGTH_LONG).show();
     }
 
     public void goToBuy (View view) {
