@@ -1178,6 +1178,7 @@ id Seller
 id aLoc
 id aLoc_m
 id aType
+id aType_b
 id a_creation
 id a_modification
 id action_bar
@@ -1223,6 +1224,7 @@ id branch
 id branch_b
 id buttonPanel
 id buy
+id buyReq
 id buyerID
 id cancel
 id center
@@ -1231,6 +1233,7 @@ id center_vertical
 id chains
 id checkbox
 id chronometer
+id cityList
 id clip_horizontal
 id clip_vertical
 id close_activity
@@ -1249,6 +1252,7 @@ id dark
 id decor_content_parent
 id default_activity_button
 id dim
+id dim_b
 id dimension
 id dimension_m
 id dimensions
@@ -1259,6 +1263,7 @@ id dno_m
 id dno_r
 id dob
 id doc
+id doc_b
 id edit_query
 id encumDoc
 id end
@@ -1272,12 +1277,14 @@ id fill_vertical
 id forever
 id forgot_button
 id forsale
+id forsale_b
 id frameContainer
 id frameContainer1
 id frameContainer_b
 id fullName
 id fullName_b
 id gVal
+id gVal_b
 id gValue
 id gValue_m
 id gone
@@ -1299,6 +1306,7 @@ id invisible
 id italic
 id item_touch_helper_previous_elevation
 id lType
+id lType_b
 id landSpinner
 id landSpinner_m
 id landType
@@ -1311,6 +1319,7 @@ id listMode
 id listView
 id list_item
 id loc
+id loc_b
 id located
 id located_b
 id location
@@ -1324,6 +1333,7 @@ id login_layout_b
 id login_password
 id login_password_b
 id mVal
+id mVal_b
 id mValue
 id mValue_m
 id mValue_r
@@ -1341,6 +1351,7 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id own
+id own_b
 id owner
 id owner_m
 id packed
@@ -1350,6 +1361,7 @@ id parentPanel
 id password
 id password_b
 id pat
+id pat_b
 id pattaDoc
 id percent
 id place_autocomplete_clear_button
@@ -1435,7 +1447,7 @@ id start
 id submenuarrow
 id submit_area
 id sur
-id survey
+id sur_b
 id tabMode
 id tag_transition_group
 id tag_unhandled_key_event_manager
@@ -1513,11 +1525,11 @@ layout activity_asset_creation
 layout activity_asset_modification
 layout activity_asset_registration
 layout activity_buy
+layout activity_buying__item
 layout activity_main
 layout activity_registrar
 layout activity_registrar__options
 layout activity_search_city
-layout activity_search_survey
 layout activity_sell
 layout activity_selling__items
 layout activity_user
@@ -1607,6 +1619,7 @@ string asset_modification
 string asset_registration
 string back
 string buy
+string buy_request
 string buyer
 string buyer_id
 string buying_options

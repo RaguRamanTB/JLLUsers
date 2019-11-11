@@ -77,4 +77,5 @@
     <string name="register_for_sale">REGISTER FOR SALE</string>
     <string name="for_sale_5">For Sale</string>
     <string name="revert_land_sale">REVERT LAND SALE</string>
+    <string name="buy_request">BUY REQUEST</string>
 </resources>

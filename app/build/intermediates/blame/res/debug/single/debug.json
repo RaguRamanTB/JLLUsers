@@ -1068,6 +1068,10 @@
         "source": "C:\\Users\\aakas\\.gradle\\caches\\transforms-2\\files-2.1\\aad09ff64bb5e019bbe1c171c65d211c\\places-2.0.0\\res\\drawable-xxxhdpi-v4\\places_powered_by_google_dark.png"
     },
     {
+        "merged": "C:\\Android Projects\\JLLUsers\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_buying__item.xml.flat",
+        "source": "C:\\Android Projects\\JLLUsers\\app\\src\\main\\res\\layout\\activity_buying__item.xml"
+    },
+    {
         "merged": "C:\\Android Projects\\JLLUsers\\app\\build\\intermediates\\res\\merged\\debug\\color_common_google_signin_btn_text_dark.xml.flat",
         "source": "C:\\Users\\aakas\\.gradle\\caches\\transforms-2\\files-2.1\\e91790921c910b5c0de2045e813ad59c\\play-services-base-17.0.0\\res\\color\\common_google_signin_btn_text_dark.xml"
     },
@@ -1458,10 +1462,6 @@
     {
         "merged": "C:\\Android Projects\\JLLUsers\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_dark_normal.xml.flat",
         "source": "C:\\Users\\aakas\\.gradle\\caches\\transforms-2\\files-2.1\\e91790921c910b5c0de2045e813ad59c\\play-services-base-17.0.0\\res\\drawable\\common_google_signin_btn_text_dark_normal.xml"
-    },
-    {
-        "merged": "C:\\Android Projects\\JLLUsers\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_search_survey.xml.flat",
-        "source": "C:\\Android Projects\\JLLUsers\\app\\src\\main\\res\\layout\\activity_search_survey.xml"
     },
     {
         "merged": "C:\\Android Projects\\JLLUsers\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_out_top.xml.flat",

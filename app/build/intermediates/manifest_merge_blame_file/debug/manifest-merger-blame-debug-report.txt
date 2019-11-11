@@ -50,10 +50,10 @@
 29-->C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:12:9-40
 30        android:usesCleartextTraffic="true" >
 30-->C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:13:9-44
-31        <activity android:name="com.example.jllusers.viewResponse" />
-31-->C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:15:9-59
-31-->C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:15:19-47
-32        <activity android:name="com.example.jllusers.searchSurvey" />
+31        <activity android:name="com.example.jllusers.Buying_Item" />
+31-->C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:15:9-58
+31-->C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:15:19-46
+32        <activity android:name="com.example.jllusers.viewResponse" />
 32-->C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:16:9-50
 32-->C:\Android Projects\JLLUsers\app\src\main\AndroidManifest.xml:16:19-47
 33        <activity android:name="com.example.jllusers.searchCity" />

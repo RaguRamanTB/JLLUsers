@@ -12,8 +12,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
-        <activity android:name=".viewResponse"></activity>
-        <activity android:name=".searchSurvey" />
+        <activity android:name=".Buying_Item"></activity>
+        <activity android:name=".viewResponse" />
         <activity android:name=".searchCity" />
         <activity android:name=".AssetRegistration" />
         <activity android:name=".AssetModification" />
