@@ -118,6 +118,7 @@ public class Buy extends AppCompatActivity implements View.OnClickListener {
                     String id = getUser.substring(getUser.length()-12);
                     if ((getForSale.equals("YES") || getForSale.equals("yes")) && !id.equals(aadhar)) {
                         Intent i = new Intent(Buy.this, Buying_Item.class);
+                        i.putExtra("Aadhar",aadhar);
                         i.putExtra("survey_no",survey);
                         startActivity(i);
                     } else if (id.equals(aadhar)) {

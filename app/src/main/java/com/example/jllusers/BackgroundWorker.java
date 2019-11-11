@@ -118,20 +118,20 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
                 e.printStackTrace();
             }
         }
-
         return null;
     }
 
     @Override
     protected void onPreExecute() {
         alertDialog = new AlertDialog.Builder(context).create();
-        alertDialog.setTitle("Login/Registration Status");
+        alertDialog.setTitle("Status");
     }
 
     @Override
     protected void onPostExecute(String result) {
         alertDialog.setMessage(result);
         alertDialog.show();
+//        Toast.makeText(context,result,Toast.LENGTH_LONG).show();
         String message = result.substring(0,14);
         String id = result.substring(result.length() - 12);
         if (message.equals("Login Success!")) {

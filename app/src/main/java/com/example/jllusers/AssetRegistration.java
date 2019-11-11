@@ -240,6 +240,6 @@ public class AssetRegistration extends AppCompatActivity implements View.OnClick
     private void returnBack() {
         Intent i = new Intent(this, Registrar_Options.class);
         startActivity(i);
-        finish();
+//        finish();
     }
 }

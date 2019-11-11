@@ -27,7 +27,7 @@ public class Buying_Item extends AppCompatActivity implements View.OnClickListen
 
     public static Button buyReq;
 
-    static String getDNo="", getPNo="", getDim="", getGValue="", getMValue="", getOwner="", id="", getALoc="", getForSale="", getLType="",getAType="";
+    static String getAadhar="", getDNo="", getPNo="", getDim="", getGValue="", getMValue="", getOwner="", id="", getALoc="", getForSale="", getLType="",getAType="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class Buying_Item extends AppCompatActivity implements View.OnClickListen
         setContentView(R.layout.activity_buying__item);
         Intent i = getIntent();
         getSNOIntent = i.getStringExtra("survey_no");
+        getAadhar = i.getStringExtra("Aadhar");
         init();
         setListeners();
         getJSON(getSNOIntent);
@@ -89,10 +90,7 @@ public class Buying_Item extends AppCompatActivity implements View.OnClickListen
             protected void onPostExecute(Object o) {
                 String myResponse = o.toString();
                 try {
-//                    JSONArray jsonArray = new JSONArray(myResponse);
                     JSONObject jsonObject = new JSONObject(myResponse);
-//                    for(int i=0; i<jsonArray.length();i++) {
-//                        jsonObject = jsonArray.getJSONObject(i);
                     getDNo = jsonObject.optString("document_no");
                     getPNo = jsonObject.optString("patta_no");
                     getDim = jsonObject.optString("dimension");
@@ -104,8 +102,6 @@ public class Buying_Item extends AppCompatActivity implements View.OnClickListen
                     id = getOwner.substring(getOwner.length() - 12);
                     getALoc = jsonObject.optString("location");
                     getForSale = jsonObject.optString("forsale");
-
-//                    }
                     doc.setText(getDNo);
                     pat.setText(getPNo);
                     dim.setText(getDim);
@@ -128,8 +124,15 @@ public class Buying_Item extends AppCompatActivity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.buyReq:
-                Toast.makeText(this,"BUY",Toast.LENGTH_LONG).show();
+                sendNotification();
                 break;
         }
+    }
+
+    private void sendNotification() {
+        String type = "BuyerNotification";
+//        BackgroundWorker backgroundWorker = new BackgroundWorker(getApplicationContext());
+        BackgroundNotification backgroundNotification = new BackgroundNotification(getApplicationContext());
+        backgroundNotification.execute(type,getSNOIntent,getDNo,getAadhar,id,"1");
     }
 }
