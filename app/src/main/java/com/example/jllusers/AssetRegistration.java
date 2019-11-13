@@ -152,6 +152,7 @@ public class AssetRegistration extends AppCompatActivity implements View.OnClick
 
     private void sendDataToServer(String json) {
         final String JSON = json;
+        final BgSendNotification bgSendNotification = new BgSendNotification(getApplicationContext());
         new AsyncTask<Void, Void, String>() {
 
             @Override
@@ -161,7 +162,9 @@ public class AssetRegistration extends AppCompatActivity implements View.OnClick
 
             @Override
             protected void onPostExecute(String s) {
+                String getSell = sellerID.getText().toString();
                 Toast.makeText(AssetRegistration.this,"Asset Registered Successfully!",Toast.LENGTH_LONG).show();
+                bgSendNotification.execute("ClearNotification", getSell);
             }
         }.execute();
     }

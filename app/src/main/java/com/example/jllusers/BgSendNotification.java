@@ -31,6 +31,7 @@ public class BgSendNotification extends AsyncTask<String, Void, String> {
     protected String doInBackground(String... voids) {
         String type = voids[0];
         String notification_url = "http://f5d6fdc0.ngrok.io/notify_seller.php";
+        String delete_url = "http://f5d6fdc0.ngrok.io/clearNotification.php";
         if (type.equals("BuyerNotification")) {
             try {
                 String getSNo = voids[1];
@@ -51,6 +52,39 @@ public class BgSendNotification extends AsyncTask<String, Void, String> {
                         +URLEncoder.encode("getBuyerID","UTF-8")+"="+URLEncoder.encode(getBuyerID,"UTF-8")+"&"
                         +URLEncoder.encode("id","UTF-8")+"="+URLEncoder.encode(getSellerID,"UTF-8")+"&"
                         +URLEncoder.encode("getNotification","UTF-8")+"="+URLEncoder.encode(getNotification,"UTF-8");
+                bufferedWriter.write(post_data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();
+
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
+                String result="";
+                String line="";
+                while ((line = bufferedReader.readLine())!=null) {
+                    result += line;
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                return result;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else if (type.equals("ClearNotification")) {
+            try {
+                String getSNo = voids[1];
+                URL url = new URL(delete_url);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setDoInput(true);
+
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+                String post_data = URLEncoder.encode("getSellID","UTF-8")+"="+URLEncoder.encode(getSNo,"UTF-8");
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
