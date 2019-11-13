@@ -1535,7 +1535,6 @@ layout activity_registrar__options
 layout activity_search_city
 layout activity_sell
 layout activity_selling__items
-layout activity_update_notification
 layout activity_user
 layout activity_user__options
 layout activity_view__assets

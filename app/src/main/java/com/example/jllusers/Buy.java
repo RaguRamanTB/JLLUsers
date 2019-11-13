@@ -90,7 +90,7 @@ public class Buy extends AppCompatActivity implements View.OnClickListener {
             @Override
             protected Object doInBackground(Object[] objects) {
                 OkHttpClient client = new OkHttpClient();
-                String BASE_URL = "https://7f45ac9d.ngrok.io/api/Land/";
+                String BASE_URL = "https://db9a43d6.ngrok.io/api/Land/";
                 String urlFinal = BASE_URL+survey;
                 Request request = new Request.Builder()
                         .url(urlFinal)

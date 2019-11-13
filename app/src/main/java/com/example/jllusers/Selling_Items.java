@@ -56,7 +56,7 @@ public class Selling_Items extends AppCompatActivity implements View.OnClickList
             @Override
             protected Object doInBackground(Object[] objects) {
                 OkHttpClient client = new OkHttpClient();
-                String BASE_URL = "https://7f45ac9d.ngrok.io/api/Land/";
+                String BASE_URL = "https://db9a43d6.ngrok.io/api/Land/";
                 String urlFinal = BASE_URL+sur_no;
                 Request request = new Request.Builder()
                         .url(urlFinal)
@@ -235,7 +235,7 @@ public class Selling_Items extends AppCompatActivity implements View.OnClickList
 
     private String getServerResponse(String json) {
         String surveyNo = sur.getText().toString();
-        final String BASE_URL = "https://7f45ac9d.ngrok.io/api/Land/";
+        final String BASE_URL = "https://db9a43d6.ngrok.io/api/Land/";
         final String finalURL = BASE_URL+surveyNo;
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder()
@@ -256,7 +256,7 @@ public class Selling_Items extends AppCompatActivity implements View.OnClickList
     }
 
     private String getServerResponse2(String json) {
-        final String BASE_URL = "https://7f45ac9d.ngrok.io/api/Register_for_sale";
+        final String BASE_URL = "https://db9a43d6.ngrok.io/api/Register_for_sale";
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder()
                 .url(BASE_URL)

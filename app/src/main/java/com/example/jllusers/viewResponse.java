@@ -40,7 +40,7 @@ public class viewResponse extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.responseList);
         arrayAdapter = new ArrayAdapter(this,R.layout.list_view,arrayList);
 
-        final String urlFinal = "http://715863b8.ngrok.io/list_notify.php";
+        final String urlFinal = "http://f5d6fdc0.ngrok.io/list_notify.php";
         AsyncTask asyncTask = new AsyncTask() {
 
             @Override

@@ -61,7 +61,7 @@ public class Sell extends AppCompatActivity implements View.OnClickListener{
     }
 
     public void ViewAssets() {
-        String BASE_URL = "https://7f45ac9d.ngrok.io/api/Land?filter=%7B\"where\"%20%3A%20%7B\"owner\"%3A%20\"resource%3Aorg.jll.hack.User%23";
+        String BASE_URL = "https://db9a43d6.ngrok.io/api/Land?filter=%7B\"where\"%20%3A%20%7B\"owner\"%3A%20\"resource%3Aorg.jll.hack.User%23";
         String END_URL = "\"%7D%7D";
         final String urlFinal = BASE_URL+aadhar+END_URL;
         arrayList.clear();

@@ -157,7 +157,7 @@ public class AssetRegistration extends AppCompatActivity implements View.OnClick
     }
 
     private String getServerResponse(String json) {
-        final String BASE_URL = "https://7f45ac9d.ngrok.io/api/Buy";
+        final String BASE_URL = "https://db9a43d6.ngrok.io/api/Buy";
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder()
                 .url(BASE_URL)
@@ -182,7 +182,7 @@ public class AssetRegistration extends AppCompatActivity implements View.OnClick
             @Override
             protected Object doInBackground(Object[] objects) {
                 OkHttpClient client = new OkHttpClient();
-                String BASE_URL = "https://7f45ac9d.ngrok.io/api/Land?filter=%7B\"where\"%3A%7B\"document_no\"%3A\"";
+                String BASE_URL = "https://db9a43d6.ngrok.io/api/Land?filter=%7B\"where\"%3A%7B\"document_no\"%3A\"";
                 String END_URL = "\"%7D%7D";
                 String urlFinal = BASE_URL+documentNo+END_URL;
                 Request request = new Request.Builder()

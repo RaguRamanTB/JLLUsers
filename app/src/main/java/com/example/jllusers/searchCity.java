@@ -44,7 +44,7 @@ public class searchCity extends AppCompatActivity {
     }
 
     private void cityList() {
-        String BASE_URL = "https://7f45ac9d.ngrok.io/api/Land?filter=%7B\"where\"%3A%7B\"location\"%3A\"";
+        String BASE_URL = "https://db9a43d6.ngrok.io/api/Land?filter=%7B\"where\"%3A%7B\"location\"%3A\"";
         String END_URL = "\"%7D%7D";
         final String urlFinal = BASE_URL+getCity+END_URL;
         arrayList.clear();
@@ -96,6 +96,7 @@ public class searchCity extends AppCompatActivity {
 
                             Intent i = new Intent(getApplicationContext(),Buying_Item.class);
                             i.putExtra("survey_no",survey);
+                            i.putExtra("Aadhar",aadhar);
                             startActivity(i);
                         }
                     });

@@ -68,7 +68,7 @@ public class Buying_Item extends AppCompatActivity implements View.OnClickListen
             @Override
             protected Object doInBackground(Object[] objects) {
                 OkHttpClient client = new OkHttpClient();
-                String BASE_URL = "https://7f45ac9d.ngrok.io/api/Land/";
+                String BASE_URL = "https://db9a43d6.ngrok.io/api/Land/";
                 String urlFinal = BASE_URL+sur_no;
                 Request request = new Request.Builder()
                         .url(urlFinal)
@@ -131,8 +131,16 @@ public class Buying_Item extends AppCompatActivity implements View.OnClickListen
 
     private void sendNotification() {
         String type = "BuyerNotification";
+        String getSNO = sur.getText().toString();
+        String getDocNo = doc.getText().toString();
+        String getSeller = own.getText().toString();
+        String notify = "1";
 //        BackgroundWorker backgroundWorker = new BackgroundWorker(getApplicationContext());
-        BackgroundNotification backgroundNotification = new BackgroundNotification(getApplicationContext());
-        backgroundNotification.execute(type,getSNOIntent,getDNo,getAadhar,id,"1");
+//        BackgroundNotification backgroundNotification = new BackgroundNotification(getApplicationContext());
+//        backgroundNotification.execute(type,getSNO,getDocNo,getAadhar,getSeller,notify);
+        BgSendNotification bgSendNotification = new BgSendNotification(getApplicationContext());
+        bgSendNotification.execute(type,getSNO,getDocNo,getAadhar,getSeller,notify);
+
+//        Toast.makeText(this,getAadhar,Toast.LENGTH_LONG).show();
     }
 }

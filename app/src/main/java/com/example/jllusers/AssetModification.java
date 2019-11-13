@@ -118,10 +118,10 @@ public class AssetModification extends AppCompatActivity implements AdapterView.
             @Override
             protected Object doInBackground(Object[] objects) {
                 OkHttpClient client = new OkHttpClient();
-//                String BASE_URL = "https://7f45ac9d.ngrok.io/api/Land?filter=%7B\"where\"%3A%7B\"survey_no\"%3A\"";
+//                String BASE_URL = "https://db9a43d6.ngrok.io/api/Land?filter=%7B\"where\"%3A%7B\"survey_no\"%3A\"";
 //                String END_URL = "\"%7D%7D";
 //                String urlFinal = BASE_URL+surveyNo+END_URL;
-                String BASE_URL = "https://7f45ac9d.ngrok.io/api/Land/";
+                String BASE_URL = "https://db9a43d6.ngrok.io/api/Land/";
                 String urlFinal = BASE_URL+surveyNo;
                 Request request = new Request.Builder()
                         .url(urlFinal)
@@ -225,7 +225,7 @@ public class AssetModification extends AppCompatActivity implements AdapterView.
 
     private String getServerResponse(String json) {
         surveyNo = SurNo.getText().toString();
-        final String BASE_URL = "https://7f45ac9d.ngrok.io/api/Land/";
+        final String BASE_URL = "https://db9a43d6.ngrok.io/api/Land/";
         final String finalURL = BASE_URL+surveyNo;
 //        Toast.makeText(this,finalURL,Toast.LENGTH_LONG).show();
         OkHttpClient okHttpClient = new OkHttpClient();

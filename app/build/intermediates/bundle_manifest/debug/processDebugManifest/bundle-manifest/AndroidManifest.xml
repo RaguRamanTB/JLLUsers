@@ -28,7 +28,6 @@
         android:testOnly="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
-        <activity android:name="com.example.jllusers.UpdateNotification" />
         <activity android:name="com.example.jllusers.Buying_Item" />
         <activity android:name="com.example.jllusers.viewResponse" />
         <activity android:name="com.example.jllusers.searchCity" />

@@ -241,7 +241,7 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
     }
 
     private String getServerResponse(String json) {
-        final String BASE_URL = "https://7f45ac9d.ngrok.io/api/Person";
+        final String BASE_URL = "https://db9a43d6.ngrok.io/api/Person";
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder()
                 .url(BASE_URL)
@@ -293,7 +293,7 @@ public class SignUp_Fragment extends Fragment implements OnClickListener {
     }
 
     private String getServerResponse2(String json) {
-        final String BASE_URL = "https://7f45ac9d.ngrok.io/api/User";
+        final String BASE_URL = "https://db9a43d6.ngrok.io/api/User";
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder()
                 .url(BASE_URL)

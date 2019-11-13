@@ -225,7 +225,7 @@ public class AssetCreation extends AppCompatActivity implements AdapterView.OnIt
     }
 
     private String getServerResponse(String json) {
-        final String BASE_URL = "https://7f45ac9d.ngrok.io/api/Land";
+        final String BASE_URL = "https://db9a43d6.ngrok.io/api/Land";
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder()
                 .url(BASE_URL)

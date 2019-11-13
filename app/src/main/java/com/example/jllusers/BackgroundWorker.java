@@ -31,8 +31,8 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
     @Override
     protected String doInBackground(String... voids) {
         String type = voids[0];
-        String login_url = "http://715863b8.ngrok.io/login.php";
-        String register_url = "http://715863b8.ngrok.io/register.php";
+        String login_url = "http://f5d6fdc0.ngrok.io/login.php";
+        String register_url = "http://f5d6fdc0.ngrok.io/register.php";
         if (type.equals("Login")) {
             try {
                 String getEmailId = voids[1];

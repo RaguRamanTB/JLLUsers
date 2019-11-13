@@ -47,7 +47,7 @@ public class View_Assets extends AppCompatActivity {
         type = "UpdateNotification";
         listView = (ListView) findViewById(R.id.requestList);
         arrayAdapter = new ArrayAdapter(this,R.layout.list_view,arrayList);
-        final String urlFinal = "http://715863b8.ngrok.io/list_notify.php";
+        final String urlFinal = "http://f5d6fdc0.ngrok.io/list_notify.php";
         final BackgroundNotification backgroundNotification = new BackgroundNotification(getApplicationContext());
         AsyncTask asyncTask = new AsyncTask() {
 
