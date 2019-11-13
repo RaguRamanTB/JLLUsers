@@ -135,6 +135,7 @@ public class Buying_Item extends AppCompatActivity implements View.OnClickListen
         String getDocNo = doc.getText().toString();
         String getSeller = own.getText().toString();
         String notify = "1";
+        View view = new View(getApplicationContext());
         BgSendNotification bgSendNotification = new BgSendNotification(getApplicationContext());
         bgSendNotification.execute(type,getSNO,getDocNo,getAadhar,getSeller,notify);
     }

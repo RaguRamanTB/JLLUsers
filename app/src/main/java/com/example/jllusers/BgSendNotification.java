@@ -3,7 +3,8 @@ package com.example.jllusers;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.os.ConditionVariable;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -21,7 +22,6 @@ import java.net.URLEncoder;
 public class BgSendNotification extends AsyncTask<String, Void, String> {
 
     Context context;
-    AlertDialog alertDialog;
 
     BgSendNotification (Context ctx) {
         context = ctx;
@@ -31,7 +31,6 @@ public class BgSendNotification extends AsyncTask<String, Void, String> {
     protected String doInBackground(String... voids) {
         String type = voids[0];
         String notification_url = "http://f5d6fdc0.ngrok.io/notify_seller.php";
-
         if (type.equals("BuyerNotification")) {
             try {
                 String getSNo = voids[1];

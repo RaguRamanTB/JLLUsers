@@ -1,9 +1,9 @@
 package com.example.jllusers;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -17,35 +17,33 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-public class BackgroundNotification extends AsyncTask<String, Void, String> {
+public class GetBuyer extends AsyncTask<String, Void, String> {
 
     Context context;
-    AlertDialog alertDialog;
+    TextView getBuyerID;
 
-    BackgroundNotification (Context ctx) {
+    GetBuyer (Context ctx, TextView getBuyer) {
         context = ctx;
+        getBuyerID = getBuyer;
     }
 
     @Override
     protected String doInBackground(String... voids) {
         String type = voids[0];
-        String update_notification = "http://f5d6fdc0.ngrok.io/update_notify.php";
-        if (type.equals("UpdateNotification")) {
+        String fill_buyer = "http://f5d6fdc0.ngrok.io/fill_buyID.php";
+        if (type.equals("FillBuy")) {
             try {
-                String getSNo = voids[1];
-                String getBuyer = voids[2];
-                String notify = voids[3];
-                URL url = new URL(update_notification);
+                String getSell = voids[1];
+                URL url = new URL(fill_buyer);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
                 httpURLConnection.setDoOutput(true);
                 httpURLConnection.setDoInput(true);
 
+
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                String post_data = URLEncoder.encode("survey_no","UTF-8")+"="+URLEncoder.encode(getSNo,"UTF-8")+"&"
-                        +URLEncoder.encode("buyerID","UTF-8")+"="+URLEncoder.encode(getBuyer,"UTF-8")+"&"
-                        +URLEncoder.encode("notified","UTF-8")+"="+URLEncoder.encode(notify,"UTF-8");
+                String post_data = URLEncoder.encode("getSellID","UTF-8")+"="+URLEncoder.encode(getSell,"UTF-8");
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
@@ -72,13 +70,8 @@ public class BackgroundNotification extends AsyncTask<String, Void, String> {
     }
 
     @Override
-    protected void onPreExecute() {
-
-    }
-
-    @Override
     protected void onPostExecute(String result) {
-        Toast.makeText(context,result,Toast.LENGTH_LONG).show();
+        getBuyerID.setText(result);
     }
 
     @Override

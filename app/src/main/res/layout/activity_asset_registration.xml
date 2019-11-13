@@ -91,7 +91,7 @@
 
 
             <TextView
-                android:layout_width="180dp"
+                android:layout_width="160dp"
                 android:layout_marginTop="5dp"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
@@ -102,9 +102,9 @@
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 android:textSize="16sp" />
-        <EditText
+        <TextView
             android:id="@+id/buyerID"
-            android:layout_width="fill_parent"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
@@ -115,6 +115,22 @@
             android:singleLine="true"
             android:textColor="@color/white"
             android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/fillBuyer"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/loginbutton_selector"
+                android:drawableStart="@drawable/places_ic_search"
+                android:drawableTint="@color/black"
+                android:gravity="center"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
         </LinearLayout>
         <View
             android:layout_width="fill_parent"
@@ -127,7 +143,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="180dp"
+                android:layout_width="160dp"
                 android:layout_marginTop="5dp"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
@@ -138,7 +154,7 @@
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 android:textSize="16sp" />
-        <EditText
+        <TextView
             android:id="@+id/sellerID"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -163,7 +179,7 @@
             android:orientation="horizontal">
 
         <TextView
-            android:layout_width="180dp"
+            android:layout_width="160dp"
             android:layout_marginTop="5dp"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"

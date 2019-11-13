@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Checkable;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.okhttp.Call;
@@ -30,9 +31,10 @@ import java.io.IOException;
 
 public class AssetRegistration extends AppCompatActivity implements View.OnClickListener {
 
-    public static EditText docNo, buyerID, sellerID, mValue;
+    public static EditText docNo, mValue;
+    public static TextView buyerID, sellerID;
     public static CheckBox parentDoc, pattaDoc, encumDoc, mapDoc, approvalDoc;
-    public static Button register, cancel, searchDocNo;
+    public static Button register, cancel, searchDocNo, fillBuyer;
 
     private static String aadhar;
 
@@ -64,12 +66,14 @@ public class AssetRegistration extends AppCompatActivity implements View.OnClick
         searchDocNo = findViewById(R.id.searchDocNo);
         register = findViewById(R.id.register);
         cancel = findViewById(R.id.cancel);
+        fillBuyer = findViewById(R.id.fillBuyer);
     }
 
     private void setListeners() {
         register.setOnClickListener(this);
         cancel.setOnClickListener(this);
         searchDocNo.setOnClickListener(this);
+        fillBuyer.setOnClickListener(this);
     }
 
     @Override
@@ -87,6 +91,9 @@ public class AssetRegistration extends AppCompatActivity implements View.OnClick
                 returnBack();
                 break;
 
+            case R.id.fillBuyer:
+                getBuyerID();
+                break;
         }
     }
 
@@ -109,8 +116,11 @@ public class AssetRegistration extends AppCompatActivity implements View.OnClick
     }
 
     private void putJSON() {
+        String bID = buyerID.getText().toString();
         if (!onSale) {
             Toast.makeText(this,"Land not for Sale!",Toast.LENGTH_LONG).show();
+        } else if (bID.equals("NO BUYER")) {
+            Toast.makeText(this,"No Buyer/Request Not Approved by Seller",Toast.LENGTH_LONG).show();
         } else {
             documentNo = docNo.getText().toString();
             buyID = buyerID.getText().toString();
@@ -121,7 +131,7 @@ public class AssetRegistration extends AppCompatActivity implements View.OnClick
             String postSeller = "org.jll.hack.User#"+sellID;
             String postRegistrar = "org.jll.hack.Registrar#"+aadhar;
 
-            Toast.makeText(this,postBuyer,Toast.LENGTH_LONG).show();
+//            Toast.makeText(this,postBuyer,Toast.LENGTH_LONG).show();
 
             final JSONObject upload = new JSONObject();
             try {
@@ -224,6 +234,7 @@ public class AssetRegistration extends AppCompatActivity implements View.OnClick
                     }
                     sellerID.setText(id);
                     mValue.setText(getMValue);
+
                     if (isForSale.equals("yes") || isForSale.equals("YES") || isForSale.equals("Yes")) {
                         onSale=true;
                     } else {
@@ -241,5 +252,11 @@ public class AssetRegistration extends AppCompatActivity implements View.OnClick
         Intent i = new Intent(this, Registrar_Options.class);
         startActivity(i);
 //        finish();
+    }
+
+    private void getBuyerID() {
+        String sID = sellerID.getText().toString();
+        GetBuyer getBuyer = new GetBuyer(getApplicationContext(), buyerID);
+        getBuyer.execute("FillBuy",sID);
     }
 }
