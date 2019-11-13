@@ -135,12 +135,7 @@ public class Buying_Item extends AppCompatActivity implements View.OnClickListen
         String getDocNo = doc.getText().toString();
         String getSeller = own.getText().toString();
         String notify = "1";
-//        BackgroundWorker backgroundWorker = new BackgroundWorker(getApplicationContext());
-//        BackgroundNotification backgroundNotification = new BackgroundNotification(getApplicationContext());
-//        backgroundNotification.execute(type,getSNO,getDocNo,getAadhar,getSeller,notify);
         BgSendNotification bgSendNotification = new BgSendNotification(getApplicationContext());
         bgSendNotification.execute(type,getSNO,getDocNo,getAadhar,getSeller,notify);
-
-//        Toast.makeText(this,getAadhar,Toast.LENGTH_LONG).show();
     }
 }
